@@ -1,0 +1,1850 @@
+# Russian translation of EmulationStation.
+# This file is distributed under the same license as the emulationstation package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: emulationstation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-16 22:58+0300\n"
+"PO-Revision-Date: 2026-11-16 23:00+0300\n"
+"Last-Translator: HUB-19 Research <hub19@local.invalid>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. type                  name             long name (display)  default sort (key, order)   theme folder            isCustom
+#: es-app/src/CollectionSystemManager.cpp:29
+msgid "all games"
+msgstr "все игры"
+
+#: es-app/src/CollectionSystemManager.cpp:30 es-app/src/MetaData.cpp:28
+msgid "last played"
+msgstr "недавние"
+
+#: es-app/src/CollectionSystemManager.cpp:31
+msgid "favorites"
+msgstr "избранное"
+
+#: es-app/src/CollectionSystemManager.cpp:32
+#: es-app/src/views/SystemView.cpp:386
+#: es-app/src/views/gamelist/BasicGameListView.cpp:226
+#: es-app/src/views/gamelist/GridGameListView.cpp:487
+msgid "random"
+msgstr "случайная"
+
+#: es-app/src/CollectionSystemManager.cpp:33
+msgid "collections"
+msgstr "коллекции"
+
+#: es-app/src/CollectionSystemManager.cpp:59 es-app/src/SystemData.cpp:379
+#: es-app/src/SystemData.cpp:386
+msgid "Favorites"
+msgstr "Избранное"
+
+#: es-app/src/CollectionSystemManager.cpp:462
+#, c-format
+msgid "Editing the '%s' Collection. Add/remove games with Y."
+msgstr "Правка коллекции «%s». Добавить/убрать игру — кнопка Y."
+
+#: es-app/src/CollectionSystemManager.cpp:470
+#, c-format
+msgid "Finished editing the '%s' Collection."
+msgstr "Правка коллекции «%s» завершена."
+
+#: es-app/src/CollectionSystemManager.cpp:580
+#, c-format
+msgid "Added '%s' to '%s'"
+msgstr "Игра «%s» добавлена в «%s»"
+
+#: es-app/src/CollectionSystemManager.cpp:584
+#, c-format
+msgid "Removed '%s' from '%s'"
+msgstr "Игра «%s» убрана из «%s»"
+
+#: es-app/src/CollectionSystemManager.cpp:683
+msgid "This collection is empty."
+msgstr "В этой коллекции нет игр."
+
+#: es-app/src/CollectionSystemManager.cpp:687
+#: es-app/src/CollectionSystemManager.cpp:688
+#: es-app/src/CollectionSystemManager.cpp:713
+#: es-app/src/CollectionSystemManager.cpp:714
+msgid "None"
+msgstr "нет"
+
+#: es-app/src/CollectionSystemManager.cpp:713
+#: es-app/src/CollectionSystemManager.cpp:714
+msgid "Various"
+msgstr "разные"
+
+#: es-app/src/CollectionSystemManager.cpp:725
+msgid "among other titles."
+msgstr "и другие."
+
+#: es-app/src/CollectionSystemManager.cpp:729
+#, c-format
+msgid "This collection contains %i game, including %s"
+msgid_plural "This collection contains %i games, including %s"
+msgstr[0] "В коллекции %i игра, в том числе %s"
+msgstr[1] "В коллекции %i игры, в том числе %s"
+msgstr[2] "В коллекции %i игр, в том числе %s"
+
+#: es-app/src/CollectionSystemManager.cpp:1310
+#, c-format
+msgid "Press again to remove from '%s'"
+msgstr "Нажмите ещё раз, чтобы убрать из «%s»"
+
+#. type 				//allKeys 				//filteredBy 		//filteredKeys 				//primaryKey 	//hasSecondaryKey 	//secondaryKey 	//menuLabel
+#: es-app/src/FileFilterIndex.cpp:19
+msgid "FAVORITES"
+msgstr "ИЗБРАННОЕ"
+
+#: es-app/src/FileFilterIndex.cpp:20
+msgid "GENRE"
+msgstr "ЖАНР"
+
+#: es-app/src/FileFilterIndex.cpp:21
+msgid "PLAYERS"
+msgstr "ИГРОКИ"
+
+#: es-app/src/FileFilterIndex.cpp:22
+msgid "PUBLISHER / DEVELOPER"
+msgstr "ИЗДАТЕЛЬ / РАЗРАБОТЧИК"
+
+#: es-app/src/FileFilterIndex.cpp:23
+msgid "RATING"
+msgstr "РЕЙТИНГ"
+
+#: es-app/src/FileFilterIndex.cpp:24
+msgid "KIDGAME"
+msgstr "ДЕТСКАЯ ИГРА"
+
+#: es-app/src/FileFilterIndex.cpp:25
+msgid "HIDDEN"
+msgstr "СКРЫТЫЕ"
+
+#: es-app/src/FileSorts.cpp:12
+msgid "name, ascending"
+msgstr "название, по возр."
+
+#: es-app/src/FileSorts.cpp:13
+msgid "name, descending"
+msgstr "название, по убыв."
+
+#: es-app/src/FileSorts.cpp:15
+msgid "rating, ascending"
+msgstr "рейтинг, по возр."
+
+#: es-app/src/FileSorts.cpp:16
+msgid "rating, descending"
+msgstr "рейтинг, по убыв."
+
+#: es-app/src/FileSorts.cpp:18
+msgid "times played, ascending"
+msgstr "число запусков, по возр."
+
+#: es-app/src/FileSorts.cpp:19
+msgid "times played, descending"
+msgstr "число запусков, по убыв."
+
+#: es-app/src/FileSorts.cpp:21
+msgid "last played, ascending"
+msgstr "последний запуск, по возр."
+
+#: es-app/src/FileSorts.cpp:22
+msgid "last played, descending"
+msgstr "последний запуск, по убыв."
+
+#: es-app/src/FileSorts.cpp:24
+msgid "number players, ascending"
+msgstr "число игроков, по возр."
+
+#: es-app/src/FileSorts.cpp:25
+msgid "number players, descending"
+msgstr "число игроков, по убыв."
+
+#: es-app/src/FileSorts.cpp:27
+msgid "release date, ascending"
+msgstr "дата выхода, по возр."
+
+#: es-app/src/FileSorts.cpp:28
+msgid "release date, descending"
+msgstr "дата выхода, по убыв."
+
+#: es-app/src/FileSorts.cpp:30
+msgid "genre, ascending"
+msgstr "жанр, по возр."
+
+#: es-app/src/FileSorts.cpp:31
+msgid "genre, descending"
+msgstr "жанр, по убыв."
+
+#: es-app/src/FileSorts.cpp:33
+msgid "developer, ascending"
+msgstr "разработчик, по возр."
+
+#: es-app/src/FileSorts.cpp:34
+msgid "developer, descending"
+msgstr "разработчик, по убыв."
+
+#: es-app/src/FileSorts.cpp:36
+msgid "publisher, ascending"
+msgstr "издатель, по возр."
+
+#: es-app/src/FileSorts.cpp:37
+msgid "publisher, descending"
+msgstr "издатель, по убыв."
+
+#: es-app/src/FileSorts.cpp:39
+msgid "system, ascending"
+msgstr "система, по возр."
+
+#: es-app/src/FileSorts.cpp:40
+msgid "system, descending"
+msgstr "система, по убыв."
+
+#. key,         type,                   default,            statistic,  name in GuiMetaDataEd,  prompt in GuiMetaDataEd
+#: es-app/src/MetaData.cpp:11 es-app/src/MetaData.cpp:39
+msgid "name"
+msgstr "название"
+
+#: es-app/src/MetaData.cpp:11 es-app/src/MetaData.cpp:39
+msgid "enter game name"
+msgstr "введите название игры"
+
+#: es-app/src/MetaData.cpp:12 es-app/src/MetaData.cpp:40
+msgid "sortname"
+msgstr "название для сортировки"
+
+#: es-app/src/MetaData.cpp:12 es-app/src/MetaData.cpp:40
+msgid "enter game sort name"
+msgstr "введите название для сортировки"
+
+#: es-app/src/MetaData.cpp:13 es-app/src/MetaData.cpp:41
+msgid "description"
+msgstr "описание"
+
+#: es-app/src/MetaData.cpp:13 es-app/src/MetaData.cpp:41
+msgid "enter description"
+msgstr "введите описание"
+
+#: es-app/src/MetaData.cpp:14 es-app/src/MetaData.cpp:42
+msgid "image"
+msgstr "изображение"
+
+#: es-app/src/MetaData.cpp:14 es-app/src/MetaData.cpp:42
+msgid "enter path to image"
+msgstr "введите путь к изображению"
+
+#: es-app/src/MetaData.cpp:15 es-app/src/MetaData.cpp:44
+#: es-app/src/guis/GuiMenu.cpp:317
+msgid "video"
+msgstr "видео"
+
+#: es-app/src/MetaData.cpp:15 es-app/src/MetaData.cpp:44
+msgid "enter path to video"
+msgstr "введите путь к видео"
+
+#: es-app/src/MetaData.cpp:16 es-app/src/MetaData.cpp:45
+msgid "marquee"
+msgstr "логотип"
+
+#: es-app/src/MetaData.cpp:16 es-app/src/MetaData.cpp:45
+msgid "enter path to marquee"
+msgstr "введите путь к логотипу"
+
+#: es-app/src/MetaData.cpp:17 es-app/src/MetaData.cpp:43
+msgid "thumbnail"
+msgstr "миниатюра"
+
+#: es-app/src/MetaData.cpp:17 es-app/src/MetaData.cpp:43
+msgid "enter path to thumbnail"
+msgstr "введите путь к миниатюре"
+
+#: es-app/src/MetaData.cpp:18 es-app/src/MetaData.cpp:46
+msgid "rating"
+msgstr "рейтинг"
+
+#: es-app/src/MetaData.cpp:18 es-app/src/MetaData.cpp:46
+msgid "enter rating"
+msgstr "введите рейтинг"
+
+#: es-app/src/MetaData.cpp:19 es-app/src/MetaData.cpp:47
+msgid "release date"
+msgstr "дата выхода"
+
+#: es-app/src/MetaData.cpp:19 es-app/src/MetaData.cpp:47
+msgid "enter release date"
+msgstr "введите дату выхода"
+
+#: es-app/src/MetaData.cpp:20 es-app/src/MetaData.cpp:48
+msgid "developer"
+msgstr "разработчик"
+
+#: es-app/src/MetaData.cpp:20 es-app/src/MetaData.cpp:48
+msgid "enter game developer"
+msgstr "введите разработчика игры"
+
+#: es-app/src/MetaData.cpp:21 es-app/src/MetaData.cpp:49
+msgid "publisher"
+msgstr "издатель"
+
+#: es-app/src/MetaData.cpp:21 es-app/src/MetaData.cpp:49
+msgid "enter game publisher"
+msgstr "введите издателя игры"
+
+#: es-app/src/MetaData.cpp:22 es-app/src/MetaData.cpp:50
+msgid "genre"
+msgstr "жанр"
+
+#: es-app/src/MetaData.cpp:22 es-app/src/MetaData.cpp:50
+msgid "enter game genre"
+msgstr "введите жанр игры"
+
+#: es-app/src/MetaData.cpp:23 es-app/src/MetaData.cpp:51
+msgid "players"
+msgstr "игроки"
+
+#: es-app/src/MetaData.cpp:23 es-app/src/MetaData.cpp:51
+msgid "enter number of players"
+msgstr "введите число игроков"
+
+#: es-app/src/MetaData.cpp:24
+msgid "favorite"
+msgstr "в избранном"
+
+#: es-app/src/MetaData.cpp:24
+msgid "enter favorite off/on"
+msgstr "в избранном: выкл/вкл"
+
+#: es-app/src/MetaData.cpp:25
+msgid "hidden"
+msgstr "скрытая"
+
+#: es-app/src/MetaData.cpp:25
+msgid "enter hidden off/on"
+msgstr "скрытая: выкл/вкл"
+
+#: es-app/src/MetaData.cpp:26
+msgid "kidgame"
+msgstr "детская игра"
+
+#: es-app/src/MetaData.cpp:26
+msgid "enter kidgame off/on"
+msgstr "детская игра: выкл/вкл"
+
+#: es-app/src/MetaData.cpp:27
+msgid "play count"
+msgstr "число запусков"
+
+#: es-app/src/MetaData.cpp:27
+msgid "enter number of times played"
+msgstr "введите число запусков"
+
+#: es-app/src/MetaData.cpp:28
+msgid "enter last played date"
+msgstr "введите дату последнего запуска"
+
+#: es-app/src/components/AsyncReqComponent.cpp:52
+#: es-app/src/guis/GuiGameScraper.cpp:46 es-app/src/guis/GuiMetaDataEd.cpp:157
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:65
+msgid "cancel"
+msgstr "отмена"
+
+#: es-app/src/components/RatingComponent.cpp:170
+msgid "add star"
+msgstr "добавить звезду"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:54
+msgid "RATING:"
+msgstr "РЕЙТИНГ:"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:55
+msgid "RELEASED:"
+msgstr "ВЫПУСК:"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:56
+msgid "DEVELOPER:"
+msgstr "РАЗРАБОТЧИК:"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:57
+msgid "PUBLISHER:"
+msgstr "ИЗДАТЕЛЬ:"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:58
+msgid "GENRE:"
+msgstr "ЖАНР:"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:59
+msgid "PLAYERS:"
+msgstr "ИГРОКИ:"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:238
+msgid ""
+"Configured scraper is no longer available.\n"
+"Please change the scraping source in the settings."
+msgstr ""
+"Выбранный скрейпер больше недоступен.\n"
+"Выберите другой источник в настройках."
+
+#: es-app/src/components/ScraperSearchComponent.cpp:239
+msgid "FINISH"
+msgstr "ГОТОВО"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:244
+msgid "NO GAMES FOUND - SKIP"
+msgstr "ИГРЫ НЕ НАЙДЕНЫ — ПРОПУСТИТЬ"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:283
+msgid "RETRY"
+msgstr "ПОВТОР"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:284
+#: es-app/src/guis/GuiScraperMulti.cpp:58
+msgid "SKIP"
+msgstr "ПРОПУСК"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:285
+#: es-app/src/guis/GuiGameScraper.cpp:46 es-app/src/guis/GuiMetaDataEd.cpp:157
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:65
+#: es-core/src/guis/GuiTextEditPopup.cpp:25
+msgid "CANCEL"
+msgstr "ОТМЕНА"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:457
+msgid "SEARCH FOR"
+msgstr "ПОИСК"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:460
+msgid "SEARCH"
+msgstr "НАЙТИ"
+
+#: es-app/src/components/ScraperSearchComponent.cpp:467
+msgid "accept result"
+msgstr "выбрать"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:18
+#: es-app/src/guis/GuiMenu.cpp:35
+msgid "GAME COLLECTION SETTINGS"
+msgstr "КОЛЛЕКЦИИ ИГР"
+
+#. manage random collection
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:31
+msgid "RANDOM GAME COLLECTION SETTINGS"
+msgstr "СЛУЧАЙНАЯ КОЛЛЕКЦИЯ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:37
+#: es-app/src/guis/GuiGamelistOptions.cpp:131
+#, c-format
+msgid "FINISH EDITING '%s' COLLECTION"
+msgstr "ЗАВЕРШИТЬ ПРАВКУ «%s»"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:47
+msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
+msgstr "НОВАЯ КОЛЛЕКЦИЯ ИЗ ТЕМЫ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:49
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:50
+msgid "SELECT THEME FOLDER"
+msgstr "ПАПКА ТЕМЫ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:71
+msgid "CREATE NEW CUSTOM COLLECTION"
+msgstr "НОВАЯ КОЛЛЕКЦИЯ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:81
+msgid "New Collection Name"
+msgstr "Название коллекции"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:88
+msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
+msgstr "ГРУППИРОВАТЬ КОЛЛЕКЦИИ БЕЗ ТЕМЫ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:92
+msgid "SORT CUSTOM COLLECTIONS AND SYSTEMS"
+msgstr "СОРТИРОВАТЬ КОЛЛЕКЦИИ С СИСТЕМАМИ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:96
+msgid "SHOW SYSTEM NAME IN COLLECTIONS"
+msgstr "ИМЯ СИСТЕМЫ В КОЛЛЕКЦИЯХ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:100
+msgid "SHOW PARENTHESIS IN COLLECTIONS"
+msgstr "ТЕКСТ В СКОБКАХ В КОЛЛЕКЦИЯХ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:105
+msgid "PRESS (Y) TWICE TO REMOVE FROM FAVS./COLL."
+msgstr "УБИРАТЬ ИЗ ИЗБР./КОЛЛ. ДВОЙНЫМ (Y)"
+
+#. Add option to select default collection for screensaver
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:108
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:121
+msgid "ADD/REMOVE GAMES WHILE SCREENSAVER TO"
+msgstr "ИГРЫ ИЗ ЗАСТАВКИ ДОБАВЛЯТЬ В"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:111
+msgid "<DEFAULT>"
+msgstr "<ПО УМОЛЧАНИЮ>"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:123
+#: es-app/src/guis/GuiGamelistFilter.cpp:33
+#: es-app/src/guis/GuiScraperStart.cpp:39
+#: es-app/src/guis/GuiScreensaverOptions.cpp:14
+#: es-app/src/guis/GuiSettings.cpp:13
+#: es-core/src/components/OptionListComponent.h:91
+msgid "BACK"
+msgstr "НАЗАД"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:123
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:317
+#: es-app/src/guis/GuiGamelistFilter.cpp:33
+#: es-app/src/guis/GuiGamelistFilter.cpp:128
+#: es-app/src/guis/GuiMetaDataEd.cpp:333
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:227
+#: es-app/src/guis/GuiScraperStart.cpp:39
+#: es-app/src/guis/GuiScraperStart.cpp:126
+#: es-app/src/guis/GuiScreensaverOptions.cpp:67
+#: es-app/src/guis/GuiSettings.cpp:66
+#: es-app/src/views/gamelist/BasicGameListView.cpp:222
+#: es-app/src/views/gamelist/GridGameListView.cpp:483
+#: es-core/src/components/OptionListComponent.h:132
+#: es-core/src/guis/GuiTextEditPopup.cpp:72
+msgid "back"
+msgstr "назад"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:154
+#, c-format
+msgid "Failed creating '%s' Collection. See log for details."
+msgstr "Не удалось создать коллекцию «%s». Подробности в журнале."
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:191
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:202
+msgid "SELECT COLLECTIONS"
+msgstr "ВЫБОР КОЛЛЕКЦИЙ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:198
+msgid "AUTOMATIC GAME COLLECTIONS"
+msgstr "АВТОКОЛЛЕКЦИИ"
+
+#: es-app/src/guis/GuiCollectionSystemsOptions.cpp:209
+msgid "CUSTOM GAME COLLECTIONS"
+msgstr "СВОИ КОЛЛЕКЦИИ"
+
+#: es-app/src/guis/GuiGameScraper.cpp:42 es-app/src/guis/GuiScraperMulti.cpp:53
+msgid "INPUT"
+msgstr "ВВОД"
+
+#: es-app/src/guis/GuiGameScraper.cpp:42 es-app/src/guis/GuiScraperMulti.cpp:53
+msgid "search"
+msgstr "поиск"
+
+#: es-app/src/guis/GuiGamelistFilter.cpp:9
+msgid "FILTER GAMELIST BY"
+msgstr "ФИЛЬТР СПИСКА ИГР"
+
+#: es-app/src/guis/GuiGamelistFilter.cpp:26
+msgid "RESET ALL FILTERS"
+msgstr "СБРОСИТЬ ФИЛЬТРЫ"
+
+#: es-app/src/guis/GuiGamelistFilter.cpp:80
+msgid "UNKNOWN"
+msgstr "НЕИЗВЕСТНО"
+
+#: es-app/src/guis/GuiGamelistFilter.cpp:82
+msgid "TRUE"
+msgstr "ДА"
+
+#: es-app/src/guis/GuiGamelistFilter.cpp:82
+msgid "FALSE"
+msgstr "НЕТ"
+
+#: es-app/src/guis/GuiGamelistFilter.cpp:86
+#, c-format
+msgid "%i STARS"
+msgid_plural "%i STARS"
+msgstr[0] "%i ЗВЕЗДА"
+msgstr[1] "%i ЗВЕЗДЫ"
+msgstr[2] "%i ЗВЁЗД"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:17
+msgid "OPTIONS"
+msgstr "ПАРАМЕТРЫ"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:47
+#: es-app/src/guis/GuiGamelistOptions.cpp:64
+msgid "JUMP TO ..."
+msgstr "ПЕРЕЙТИ К ..."
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:89
+msgid "LAUNCH SYSTEM SCREENSAVER"
+msgstr "ЗАСТАВКА ЭТОЙ СИСТЕМЫ"
+
+#. "sort list by" menuitem
+#: es-app/src/guis/GuiGamelistOptions.cpp:95
+#: es-app/src/guis/GuiGamelistOptions.cpp:102
+msgid "SORT GAMES BY"
+msgstr "СОРТИРОВКА"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:110
+msgid "FILTER GAMELIST"
+msgstr "ФИЛЬТР СПИСКА ИГР"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:123
+msgid "ADD/REMOVE GAMES TO THIS GAME COLLECTION"
+msgstr "ИЗМЕНИТЬ СОСТАВ КОЛЛЕКЦИИ"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:139
+msgid "GET NEW RANDOM GAMES"
+msgstr "ДРУГИЕ СЛУЧАЙНЫЕ ИГРЫ"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:147
+msgid "EDIT THIS FOLDER'S METADATA"
+msgstr "ИЗМЕНИТЬ ДАННЫЕ ПАПКИ"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:147
+msgid "EDIT THIS GAME'S METADATA"
+msgstr "ИЗМЕНИТЬ ДАННЫЕ ИГРЫ"
+
+#: es-app/src/guis/GuiGamelistOptions.cpp:335 es-app/src/guis/GuiMenu.cpp:679
+#: es-app/src/guis/GuiMetaDataEd.cpp:334
+#: es-app/src/guis/GuiScraperStart.cpp:127
+#: es-app/src/guis/GuiScreensaverOptions.cpp:68
+#: es-app/src/guis/GuiSettings.cpp:67
+msgid "close"
+msgstr "закрыть"
+
+#. screensaver time
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:16
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:69
+msgid "m"
+msgstr "мин"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:18
+msgid "SCREENSAVER AFTER"
+msgstr "ЗАСТАВКА ЧЕРЕЗ"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:27
+msgid "SCREENSAVER CONTROLS"
+msgstr "УПРАВЛЕНИЕ В ЗАСТАВКЕ"
+
+#. screensaver behavior
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:31
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:39
+msgid "SCREENSAVER BEHAVIOR"
+msgstr "ВИД ЗАСТАВКИ"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:33
+msgid "dim"
+msgstr "затемнение"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:34
+msgid "black"
+msgstr "чёрный экран"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:35
+msgid "random video"
+msgstr "случайное видео"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:36
+msgid "slideshow"
+msgstr "слайд-шоу"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:44
+msgid ""
+"The \"Random Video\" screensaver shows videos from your gamelist.\n"
+"\n"
+"If you do not have videos, or if in several consecutive attempts the games it selects don't have videos it will default to black.\n"
+"\n"
+"More options in the \"UI Settings\" > \"Video Screensaver\" menu."
+msgstr ""
+"Заставка «Случайное видео» показывает видео из списка игр.\n"
+"\n"
+"Если видео нет или у нескольких выбранных подряд игр их не оказалось, вместо видео будет чёрный экран.\n"
+"\n"
+"Другие параметры — в меню «Настройки интерфейса» > «Видеозаставка»."
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:45
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:87
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:64
+#: es-app/src/guis/GuiScraperMulti.cpp:148 es-app/src/views/SystemView.cpp:127
+#: es-core/src/guis/GuiInputConfig.cpp:192 es-core/src/guis/GuiMsgBox.cpp:34
+#: es-core/src/guis/GuiMsgBox.h:17 es-core/src/guis/GuiTextEditPopup.h:17
+msgid "OK"
+msgstr "ОК"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:55
+msgid "VIDEO SCREENSAVER SETTINGS"
+msgstr "НАСТРОЙКИ ВИДЕОЗАСТАВКИ"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:61
+msgid "SLIDESHOW SCREENSAVER SETTINGS"
+msgstr "НАСТРОЙКИ СЛАЙД-ШОУ"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:71
+msgid "SYSTEM SLEEP AFTER"
+msgstr "СОН СИСТЕМЫ ЧЕРЕЗ"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:79
+msgid ""
+"One time note: Enabling the system sleep time will trigger user-defined scripts.\n"
+"Please see Retropie/Emulationstation Wiki on events for details."
+msgstr ""
+"Однократное напоминание: сон системы запускает пользовательские скрипты.\n"
+"Подробнее о событиях — в вики RetroPie/EmulationStation."
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:85
+msgid "The system sleep delay is enabled, but is less than or equal to the screen saver start delay."
+msgstr "Сон системы включён, но его задержка не больше задержки заставки."
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:86
+#, c-format
+msgid "Adjusted system sleep time to %i minute."
+msgid_plural "Adjusted system sleep time to %i minutes."
+msgstr[0] "Время до сна системы изменено на %i минуту."
+msgstr[1] "Время до сна системы изменено на %i минуты."
+msgstr[2] "Время до сна системы изменено на %i минут."
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:98
+msgid "VIDEO SCREENSAVER"
+msgstr "ВИДЕОЗАСТАВКА"
+
+#: es-app/src/guis/GuiGeneralScreensaverOptions.cpp:102
+msgid "SLIDESHOW SCREENSAVER"
+msgstr "СЛАЙД-ШОУ"
+
+#: es-app/src/guis/GuiMenu.cpp:27
+msgid "MAIN MENU"
+msgstr "ГЛАВНОЕ МЕНЮ"
+
+#: es-app/src/guis/GuiMenu.cpp:32 es-app/src/guis/GuiMenu.cpp:52
+msgid "SCRAPER"
+msgstr "СКРЕЙПЕР"
+
+#: es-app/src/guis/GuiMenu.cpp:33 es-app/src/guis/GuiMenu.cpp:39
+#: es-app/src/guis/GuiMenu.cpp:89
+msgid "SOUND SETTINGS"
+msgstr "НАСТРОЙКИ ЗВУКА"
+
+#: es-app/src/guis/GuiMenu.cpp:34 es-app/src/guis/GuiMenu.cpp:200
+msgid "UI SETTINGS"
+msgstr "НАСТРОЙКИ ИНТЕРФЕЙСА"
+
+#: es-app/src/guis/GuiMenu.cpp:36 es-app/src/guis/GuiMenu.cpp:409
+msgid "OTHER SETTINGS"
+msgstr "ДРУГИЕ НАСТРОЙКИ"
+
+#: es-app/src/guis/GuiMenu.cpp:37 es-core/src/guis/GuiDetectDevice.cpp:25
+msgid "CONFIGURE INPUT"
+msgstr "НАСТРОЙКА УПРАВЛЕНИЯ"
+
+#: es-app/src/guis/GuiMenu.cpp:42 es-app/src/guis/GuiMenu.cpp:522
+#: es-app/src/main.cpp:393
+msgid "QUIT"
+msgstr "ВЫХОД"
+
+#. scrape from
+#: es-app/src/guis/GuiMenu.cpp:55 es-app/src/guis/GuiMenu.cpp:62
+msgid "SCRAPE FROM"
+msgstr "ИСТОЧНИК"
+
+#: es-app/src/guis/GuiMenu.cpp:68
+msgid "SCRAPE RATINGS"
+msgstr "ЗАГРУЖАТЬ РЕЙТИНГИ"
+
+#: es-app/src/guis/GuiMenu.cpp:78 es-app/src/guis/GuiScraperStart.cpp:13
+msgid "SCRAPE NOW"
+msgstr "ЗАГРУЗИТЬ ДАННЫЕ"
+
+#: es-app/src/guis/GuiMenu.cpp:94
+msgid "SYSTEM VOLUME"
+msgstr "ГРОМКОСТЬ"
+
+#. audio card
+#: es-app/src/guis/GuiMenu.cpp:101 es-app/src/guis/GuiMenu.cpp:116
+msgid "AUDIO CARD"
+msgstr "ЗВУКОВАЯ КАРТА"
+
+#: es-app/src/guis/GuiMenu.cpp:103 es-app/src/guis/GuiMenu.cpp:421
+msgid "default"
+msgstr "по умолчанию"
+
+#. volume control device
+#: es-app/src/guis/GuiMenu.cpp:124 es-app/src/guis/GuiMenu.cpp:140
+msgid "AUDIO DEVICE"
+msgstr "АУДИОУСТРОЙСТВО"
+
+#: es-app/src/guis/GuiMenu.cpp:126
+msgid "PCM"
+msgstr "PCM"
+
+#: es-app/src/guis/GuiMenu.cpp:127
+msgid "HDMI"
+msgstr "HDMI"
+
+#: es-app/src/guis/GuiMenu.cpp:128
+msgid "Headphone"
+msgstr "Наушники"
+
+#: es-app/src/guis/GuiMenu.cpp:129
+msgid "Speaker"
+msgstr "Динамик"
+
+#: es-app/src/guis/GuiMenu.cpp:130
+msgid "Master"
+msgstr "Общий"
+
+#: es-app/src/guis/GuiMenu.cpp:131
+msgid "Digital"
+msgstr "Цифровой"
+
+#: es-app/src/guis/GuiMenu.cpp:132
+msgid "Analogue"
+msgstr "Аналоговый"
+
+#: es-app/src/guis/GuiMenu.cpp:151
+msgid "ENABLE NAVIGATION SOUNDS"
+msgstr "ЗВУКИ НАВИГАЦИИ"
+
+#: es-app/src/guis/GuiMenu.cpp:165
+msgid "ENABLE VIDEO AUDIO"
+msgstr "ЗВУК В ВИДЕО"
+
+#. OMX player Audio Device
+#: es-app/src/guis/GuiMenu.cpp:170 es-app/src/guis/GuiMenu.cpp:186
+msgid "OMX PLAYER AUDIO DEVICE"
+msgstr "АУДИОВЫХОД OMX PLAYER"
+
+#. UI mode
+#: es-app/src/guis/GuiMenu.cpp:203 es-app/src/guis/GuiMenu.cpp:207
+msgid "UI MODE"
+msgstr "РЕЖИМ ИНТЕРФЕЙСА"
+
+#: es-app/src/guis/GuiMenu.cpp:214
+#, c-format
+msgid ""
+"You are changing the UI to a restricted mode:\n"
+"%s\n"
+"This will hide most menu-options to prevent changes to the system.\n"
+"To unlock and return to the full UI, enter this code: \n"
+"\"%s\"\n"
+"\n"
+"Do you want to proceed?"
+msgstr ""
+"Интерфейс переходит в ограниченный режим:\n"
+"%s\n"
+"Большинство пунктов меню будет скрыто, чтобы систему нельзя было изменить.\n"
+"Чтобы снять ограничение и вернуть полный интерфейс, введите код: \n"
+"\"%s\"\n"
+"\n"
+"Продолжить?"
+
+#: es-app/src/guis/GuiMenu.cpp:221 es-app/src/guis/GuiMenu.cpp:512
+#: es-app/src/guis/GuiMenu.cpp:541 es-app/src/guis/GuiMenu.cpp:559
+#: es-app/src/guis/GuiMenu.cpp:580 es-app/src/guis/GuiMenu.cpp:599
+#: es-app/src/guis/GuiMetaDataEd.cpp:162 es-app/src/guis/GuiMetaDataEd.cpp:264
+#: es-app/src/guis/GuiScraperStart.cpp:53
+#: es-core/src/guis/GuiInputConfig.cpp:198
+msgid "YES"
+msgstr "ДА"
+
+#: es-app/src/guis/GuiMenu.cpp:225 es-app/src/guis/GuiMenu.cpp:515
+#: es-app/src/guis/GuiMenu.cpp:541 es-app/src/guis/GuiMenu.cpp:559
+#: es-app/src/guis/GuiMenu.cpp:580 es-app/src/guis/GuiMenu.cpp:599
+#: es-app/src/guis/GuiMetaDataEd.cpp:162 es-app/src/guis/GuiMetaDataEd.cpp:265
+#: es-app/src/guis/GuiScraperStart.cpp:54
+#: es-core/src/guis/GuiInputConfig.cpp:204 es-core/src/guis/GuiMsgBox.cpp:34
+msgid "NO"
+msgstr "НЕТ"
+
+#: es-app/src/guis/GuiMenu.cpp:232 es-app/src/guis/GuiMenu.cpp:621
+msgid "SCREENSAVER SETTINGS"
+msgstr "НАСТРОЙКИ ЗАСТАВКИ"
+
+#: es-app/src/guis/GuiMenu.cpp:240
+msgid "QUICK SYSTEM SELECT"
+msgstr "БЫСТРЫЙ ВЫБОР СИСТЕМЫ"
+
+#: es-app/src/guis/GuiMenu.cpp:246
+msgid "CAROUSEL TRANSITIONS"
+msgstr "АНИМАЦИЯ КАРУСЕЛИ"
+
+#. transition style
+#: es-app/src/guis/GuiMenu.cpp:259 es-app/src/guis/GuiMenu.cpp:266
+msgid "TRANSITION STYLE"
+msgstr "СТИЛЬ ПЕРЕХОДОВ"
+
+#: es-app/src/guis/GuiMenu.cpp:261
+msgid "fade"
+msgstr "затухание"
+
+#: es-app/src/guis/GuiMenu.cpp:262
+msgid "slide"
+msgstr "сдвиг"
+
+#: es-app/src/guis/GuiMenu.cpp:263 es-app/src/guis/GuiMenu.cpp:423
+msgid "instant"
+msgstr "мгновенно"
+
+#: es-app/src/guis/GuiMenu.cpp:287 es-app/src/guis/GuiMenu.cpp:290
+msgid "THEME SET"
+msgstr "ТЕМА"
+
+#. GameList view style
+#: es-app/src/guis/GuiMenu.cpp:312 es-app/src/guis/GuiMenu.cpp:322
+msgid "GAMELIST VIEW STYLE"
+msgstr "ВИД СПИСКА ИГР"
+
+#: es-app/src/guis/GuiMenu.cpp:314
+msgid "automatic"
+msgstr "автоматически"
+
+#: es-app/src/guis/GuiMenu.cpp:315
+msgid "basic"
+msgstr "простой"
+
+#: es-app/src/guis/GuiMenu.cpp:316
+msgid "detailed"
+msgstr "подробный"
+
+#: es-app/src/guis/GuiMenu.cpp:318
+msgid "grid"
+msgstr "сетка"
+
+#: es-app/src/guis/GuiMenu.cpp:335
+msgid "IGNORE ARTICLES (NAME SORT ONLY)"
+msgstr "БЕЗ АРТИКЛЕЙ ПРИ СОРТИРОВКЕ"
+
+#. Display popup to inform user
+#: es-app/src/guis/GuiMenu.cpp:353
+msgid "Files sorted"
+msgstr "Файлы отсортированы"
+
+#: es-app/src/guis/GuiMenu.cpp:361
+msgid "USE FULL SCREEN PAGING FOR LB/RB"
+msgstr "LB/RB ЛИСТАЮТ ПО ЭКРАНУ"
+
+#. Optionally start in selected system
+#: es-app/src/guis/GuiMenu.cpp:367 es-app/src/guis/GuiMenu.cpp:376
+msgid "START ON SYSTEM"
+msgstr "СИСТЕМА ПРИ ЗАПУСКЕ"
+
+#: es-app/src/guis/GuiMenu.cpp:368
+msgid "NONE"
+msgstr "НЕТ"
+
+#: es-app/src/guis/GuiMenu.cpp:384
+msgid "ON-SCREEN HELP"
+msgstr "ПОДСКАЗКИ НА ЭКРАНЕ"
+
+#: es-app/src/guis/GuiMenu.cpp:390
+msgid "ENABLE FILTERS"
+msgstr "ВКЛЮЧИТЬ ФИЛЬТРЫ"
+
+#: es-app/src/guis/GuiMenu.cpp:400
+msgid "DISABLE START MENU IN KID MODE"
+msgstr "БЕЗ МЕНЮ В ДЕТСКОМ РЕЖИМЕ"
+
+#. maximum vram
+#: es-app/src/guis/GuiMenu.cpp:412
+msgid "Mb"
+msgstr "МБ"
+
+#: es-app/src/guis/GuiMenu.cpp:414
+msgid "VRAM LIMIT"
+msgstr "ЛИМИТ ВИДЕОПАМЯТИ"
+
+#. power saver
+#: es-app/src/guis/GuiMenu.cpp:418 es-app/src/guis/GuiMenu.cpp:426
+msgid "POWER SAVER MODES"
+msgstr "ЭНЕРГОСБЕРЕЖЕНИЕ"
+
+#: es-app/src/guis/GuiMenu.cpp:420
+msgid "disabled"
+msgstr "выключено"
+
+#: es-app/src/guis/GuiMenu.cpp:422
+msgid "enhanced"
+msgstr "усиленное"
+
+#. gamelists
+#: es-app/src/guis/GuiMenu.cpp:438 es-app/src/guis/GuiMenu.cpp:446
+msgid "SAVE METADATA"
+msgstr "СОХРАНЯТЬ ДАННЫЕ ОБ ИГРАХ"
+
+#: es-app/src/guis/GuiMenu.cpp:440
+msgid "on exit"
+msgstr "при выходе"
+
+#: es-app/src/guis/GuiMenu.cpp:441
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:37
+msgid "always"
+msgstr "всегда"
+
+#: es-app/src/guis/GuiMenu.cpp:442
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:39
+#: es-core/src/components/DateTimeComponent.cpp:60
+#: es-core/src/components/DateTimeEditComponent.cpp:212
+msgid "never"
+msgstr "никогда"
+
+#: es-app/src/guis/GuiMenu.cpp:453
+msgid "PARSE GAMESLISTS ONLY"
+msgstr "ЧИТАТЬ ТОЛЬКО СПИСКИ ИГР"
+
+#: es-app/src/guis/GuiMenu.cpp:458
+msgid "ASYNC FILE IO"
+msgstr "АСИНХРОННЫЙ ВВОД-ВЫВОД"
+
+#: es-app/src/guis/GuiMenu.cpp:463
+msgid "SEARCH FOR LOCAL ART"
+msgstr "ИСКАТЬ КАРТИНКИ НА ДИСКЕ"
+
+#: es-app/src/guis/GuiMenu.cpp:469
+msgid "SHOW HIDDEN FILES"
+msgstr "ПОКАЗЫВАТЬ СКРЫТЫЕ ФАЙЛЫ"
+
+#: es-app/src/guis/GuiMenu.cpp:476
+msgid "USE OMX PLAYER (HW ACCELERATED)"
+msgstr "OMX PLAYER (АППАРАТНОЕ УСКОРЕНИЕ)"
+
+#: es-app/src/guis/GuiMenu.cpp:495
+msgid "INDEX FILES DURING SCREENSAVER"
+msgstr "ИНДЕКСАЦИЯ ВО ВРЕМЯ ЗАСТАВКИ"
+
+#: es-app/src/guis/GuiMenu.cpp:501
+msgid "SHOW FRAMERATE"
+msgstr "ПОКАЗЫВАТЬ FPS"
+
+#: es-app/src/guis/GuiMenu.cpp:512
+msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgstr "НАСТРОИТЬ УПРАВЛЕНИЕ?"
+
+#: es-app/src/guis/GuiMenu.cpp:541 es-app/src/guis/GuiMenu.cpp:580
+msgid "REALLY RESTART?"
+msgstr "ТОЧНО ПЕРЕЗАПУСТИТЬ?"
+
+#: es-app/src/guis/GuiMenu.cpp:546
+msgid "RESTART EMULATIONSTATION"
+msgstr "ПЕРЕЗАПУСК EMULATIONSTATION"
+
+#: es-app/src/guis/GuiMenu.cpp:559
+msgid "REALLY QUIT?"
+msgstr "ТОЧНО ВЫЙТИ?"
+
+#: es-app/src/guis/GuiMenu.cpp:564
+msgid "QUIT EMULATIONSTATION"
+msgstr "ВЫХОД ИЗ EMULATIONSTATION"
+
+#: es-app/src/guis/GuiMenu.cpp:585
+msgid "RESTART SYSTEM"
+msgstr "ПЕРЕЗАГРУЗКА СИСТЕМЫ"
+
+#: es-app/src/guis/GuiMenu.cpp:599
+msgid "REALLY SHUTDOWN?"
+msgstr "ТОЧНО ВЫКЛЮЧИТЬ?"
+
+#: es-app/src/guis/GuiMenu.cpp:604
+msgid "SHUTDOWN SYSTEM"
+msgstr "ВЫКЛЮЧЕНИЕ СИСТЕМЫ"
+
+#: es-app/src/guis/GuiMenu.cpp:677 es-app/src/views/SystemView.cpp:382
+#: es-app/src/views/SystemView.cpp:384
+#: es-app/src/views/gamelist/BasicGameListView.cpp:220
+#: es-app/src/views/gamelist/GridGameListView.cpp:481
+#: es-core/src/components/ComponentGrid.cpp:434
+#: es-core/src/components/ComponentGrid.cpp:436
+#: es-core/src/components/ComponentGrid.cpp:438
+#: es-core/src/components/ComponentList.cpp:328
+msgid "choose"
+msgstr "выбор"
+
+#: es-app/src/guis/GuiMenu.cpp:678 es-app/src/views/SystemView.cpp:385
+#: es-core/src/components/ImageComponent.cpp:525
+#: es-core/src/components/OptionListComponent.h:326
+#: es-core/src/components/VideoComponent.cpp:227
+msgid "select"
+msgstr "выбрать"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:43
+msgid "EDIT METADATA"
+msgstr "ИЗМЕНЕНИЕ ДАННЫХ"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:44
+#, c-format
+msgid "GAME: %s"
+msgstr "ИГРА: %s"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:44
+#, c-format
+msgid "FOLDER: %s"
+msgstr "ПАПКА: %s"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:154
+msgid "SCRAPE"
+msgstr "ЗАГРУЗИТЬ"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:154
+msgid "scrape"
+msgstr "загрузить"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:156
+msgid "SAVE"
+msgstr "СОХРАНИТЬ"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:156
+msgid "save"
+msgstr "сохранить"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:162
+msgid ""
+"THIS WILL DELETE THE ACTUAL GAME FILE(S)!\n"
+"ARE YOU SURE?"
+msgstr ""
+"ФАЙЛЫ ИГРЫ БУДУТ УДАЛЕНЫ С ДИСКА!\n"
+"ВЫ УВЕРЕНЫ?"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:163
+msgid "DELETE"
+msgstr "УДАЛИТЬ"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:163
+msgid "delete"
+msgstr "удалить"
+
+#: es-app/src/guis/GuiMetaDataEd.cpp:263
+msgid "SAVE CHANGES?"
+msgstr "СОХРАНИТЬ ИЗМЕНЕНИЯ?"
+
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:15
+msgid "RANDOM COLLECTION"
+msgstr "СЛУЧАЙНАЯ КОЛЛЕКЦИЯ"
+
+#. get collections
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:28
+msgid "INCLUDE SYSTEMS"
+msgstr "ВКЛЮЧИТЬ СИСТЕМЫ"
+
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:29
+msgid "INCLUDE AUTO COLLECTIONS"
+msgstr "ВКЛЮЧИТЬ АВТОКОЛЛЕКЦИИ"
+
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:30
+msgid "INCLUDE CUSTOM COLLECTIONS"
+msgstr "ВКЛЮЧИТЬ СВОИ КОЛЛЕКЦИИ"
+
+#. Add option to exclude games from a collection
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:33
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:45
+msgid "EXCLUDE GAMES FROM"
+msgstr "ИСКЛЮЧИТЬ ИГРЫ ИЗ"
+
+#. Add default option
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:36
+msgid "<NONE>"
+msgstr "<НЕТ>"
+
+#. Add option to trim random collection items
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:48
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:60
+msgid "MAX GAMES"
+msgstr "МАКС. ИГР"
+
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:52
+msgid "ALL"
+msgstr "ВСЕ"
+
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:64
+#: es-core/src/guis/GuiInputConfig.cpp:192
+msgid "ok"
+msgstr "ок"
+
+#: es-app/src/guis/GuiRandomCollectionOptions.cpp:128
+msgid "INCLUDE GAMES FROM"
+msgstr "ВЗЯТЬ ИГРЫ ИЗ"
+
+#. set up grid
+#: es-app/src/guis/GuiScraperMulti.cpp:33
+msgid "SCRAPING IN PROGRESS"
+msgstr "ИДЁТ ЗАГРУЗКА ДАННЫХ"
+
+#: es-app/src/guis/GuiScraperMulti.cpp:58
+msgid "skip"
+msgstr "пропустить"
+
+#: es-app/src/guis/GuiScraperMulti.cpp:64
+msgid "STOP"
+msgstr "СТОП"
+
+#: es-app/src/guis/GuiScraperMulti.cpp:64
+msgid "stop (progress saved)"
+msgstr "стоп (загруженное сохранится)"
+
+#. update subtitle
+#. clear
+#: es-app/src/guis/GuiScraperMulti.cpp:107
+#, c-format
+msgid "GAME %i OF %i - %s"
+msgstr "ИГРА %i ИЗ %i — %s"
+
+#: es-app/src/guis/GuiScraperMulti.cpp:139
+msgid "NO GAMES WERE SCRAPED."
+msgstr "ДАННЫЕ НЕ ЗАГРУЖЕНЫ НИ ДЛЯ ОДНОЙ ИГРЫ."
+
+#: es-app/src/guis/GuiScraperMulti.cpp:141
+#, c-format
+msgid "%i GAME SUCCESSFULLY SCRAPED!"
+msgid_plural "%i GAMES SUCCESSFULLY SCRAPED!"
+msgstr[0] "ДАННЫЕ ЗАГРУЖЕНЫ ДЛЯ %i ИГРЫ!"
+msgstr[1] "ДАННЫЕ ЗАГРУЖЕНЫ ДЛЯ %i ИГР!"
+msgstr[2] "ДАННЫЕ ЗАГРУЖЕНЫ ДЛЯ %i ИГР!"
+
+#: es-app/src/guis/GuiScraperMulti.cpp:144
+#, c-format
+msgid "%i GAME SKIPPED."
+msgid_plural "%i GAMES SKIPPED."
+msgstr[0] "%i ИГРА ПРОПУЩЕНА."
+msgstr[1] "%i ИГРЫ ПРОПУЩЕНО."
+msgstr[2] "%i ИГР ПРОПУЩЕНО."
+
+#. add filters (with first one selected)
+#: es-app/src/guis/GuiScraperStart.cpp:18
+msgid "SCRAPE THESE GAMES"
+msgstr "КАКИЕ ИГРЫ"
+
+#: es-app/src/guis/GuiScraperStart.cpp:19
+msgid "All Games"
+msgstr "Все игры"
+
+#: es-app/src/guis/GuiScraperStart.cpp:21
+msgid "Only missing image"
+msgstr "Только без картинки"
+
+#: es-app/src/guis/GuiScraperStart.cpp:23
+msgid "Filter"
+msgstr "Фильтр"
+
+#. add systems (all with a platformid specified selected)
+#: es-app/src/guis/GuiScraperStart.cpp:26
+msgid "SCRAPE THESE SYSTEMS"
+msgstr "КАКИЕ СИСТЕМЫ"
+
+#: es-app/src/guis/GuiScraperStart.cpp:32
+msgid "Systems"
+msgstr "Системы"
+
+#: es-app/src/guis/GuiScraperStart.cpp:36
+msgid "User decides on conflicts"
+msgstr "Спорное выбирать вручную"
+
+#: es-app/src/guis/GuiScraperStart.cpp:38
+#: es-core/src/guis/GuiInputConfig.cpp:26
+msgid "START"
+msgstr "СТАРТ"
+
+#: es-app/src/guis/GuiScraperStart.cpp:38
+msgid "start"
+msgstr "начать"
+
+#: es-app/src/guis/GuiScraperStart.cpp:52
+msgid ""
+"Warning: some of your selected systems do not have a platform set. Results may be even more inaccurate than usual!\n"
+"Continue anyway?"
+msgstr ""
+"Внимание: у некоторых выбранных систем не задана платформа. Результаты могут быть ещё менее точными, чем обычно!\n"
+"Всё равно продолжить?"
+
+#: es-app/src/guis/GuiScraperStart.cpp:69
+msgid "NO GAMES FIT THAT CRITERIA."
+msgstr "НЕТ ИГР, ПОДХОДЯЩИХ ПОД УСЛОВИЯ."
+
+#: es-app/src/guis/GuiScreensaverOptions.cpp:14
+#: es-app/src/guis/GuiSettings.cpp:13
+msgid "go back"
+msgstr "назад"
+
+#. media duration (seconds)
+#. timeout to swap videos
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:16
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:13
+msgid "s"
+msgstr "с"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:18
+msgid "SWAP MEDIA AFTER (SECS)"
+msgstr "СМЕНА КАРТИНКИ ЧЕРЕЗ (СЕК)"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:28
+msgid "STRETCH MEDIA"
+msgstr "РАСТЯГИВАТЬ"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:35
+msgid "BACKGROUND AUDIO"
+msgstr "ФОНОВЫЙ ЗВУК"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:43
+msgid "USE CUSTOM MEDIA"
+msgstr "СВОИ КАРТИНКИ"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:48
+msgid "CUSTOM MEDIA DIR"
+msgstr "ПАПКА С КАРТИНКАМИ"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:56
+msgid "CUSTOM MEDIA DIR RECURSIVE"
+msgstr "ВКЛЮЧАЯ ПОДПАПКИ"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:63
+msgid "CUSTOM IMAGE FILTER"
+msgstr "ФИЛЬТР ИЗОБРАЖЕНИЙ"
+
+#: es-app/src/guis/GuiSlideshowScreensaverOptions.cpp:72
+msgid "CUSTOM VIDEO FILTER"
+msgstr "ФИЛЬТР ВИДЕО"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:15
+msgid "SWAP VIDEO AFTER (SECS)"
+msgstr "СМЕНА ВИДЕО ЧЕРЕЗ (СЕК)"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:24
+msgid "STRETCH VIDEO ON SCREENSAVER"
+msgstr "РАСТЯГИВАТЬ ВИДЕО"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:30
+msgid "USE OMX PLAYER FOR SCREENSAVER"
+msgstr "OMX PLAYER ДЛЯ ЗАСТАВКИ"
+
+#. Render Video Game Name as subtitles
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:35
+msgid "SHOW GAME INFO"
+msgstr "СВЕДЕНИЯ ОБ ИГРЕ"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:38
+msgid "start & end"
+msgstr "в начале и в конце"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:42
+msgid "SHOW GAME INFO ON SCREENSAVER"
+msgstr "СВЕДЕНИЯ ОБ ИГРЕ В ЗАСТАВКЕ"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:47
+msgid "MUTE SCREENSAVER AUDIO"
+msgstr "БЕЗ ЗВУКА В ЗАСТАВКЕ"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:51
+msgid "VIDEO RESOLUTION"
+msgstr "РАЗРЕШЕНИЕ ВИДЕО"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:53
+msgid "original"
+msgstr "исходное"
+
+#. renders at original video resolution, stretched to fit screen
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:54
+msgid "low"
+msgstr "низкое"
+
+#. 25% of screen resolution
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:55
+msgid "medium"
+msgstr "среднее"
+
+#. 50% of screen resolution
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:56
+msgid "high"
+msgstr "высокое"
+
+#. 75% of screen resolution
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:57
+msgid "max"
+msgstr "максимальное"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:60
+msgid "VLC: SCREENSAVER VIDEO RESOLUTION"
+msgstr "VLC: РАЗРЕШЕНИЕ ВИДЕО"
+
+#. Set subtitle position
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:67
+msgid "GAME INFO ALIGNMENT"
+msgstr "ВЫРАВНИВАНИЕ СВЕДЕНИЙ"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:69
+msgid "left"
+msgstr "слева"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:70
+msgid "center"
+msgstr "по центру"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:73
+msgid "OMX: GAME INFO ALIGNMENT"
+msgstr "OMX: ВЫРАВНИВАНИЕ СВЕДЕНИЙ"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:79
+msgid "OMX: GAME INFO FONT SIZE"
+msgstr "OMX: РАЗМЕР ШРИФТА СВЕДЕНИЙ"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:87
+msgid "OMX: PATH TO FONT FILE"
+msgstr "OMX: ФАЙЛ ШРИФТА"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:94
+msgid "OMX: PATH TO ITALIC FONT FILE"
+msgstr "OMX: ФАЙЛ КУРСИВНОГО ШРИФТА"
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:117
+msgid ""
+"Using OMX Player and displaying Game Info may result in the video flickering in some TV modes. If that happens, consider:\n"
+"\n"
+"• Disabling the \"Show Game Info\" option;\n"
+"• Disabling \"Overscan\" on the Pi configuration menu might help:\n"
+"RetroPie > Raspi-Config > Advanced Options > Overscan > \"No\".\n"
+"• Disabling the use of OMX Player for the screensaver."
+msgstr ""
+"С OMX Player и сведениями об игре видео в некоторых режимах ТВ может мерцать. Если так, попробуйте:\n"
+"\n"
+"• выключить параметр «Сведения об игре»;\n"
+"• выключить «Overscan» в меню настройки Pi:\n"
+"RetroPie > Raspi-Config > Advanced Options > Overscan > \"No\";\n"
+"• не использовать OMX Player для заставки."
+
+#: es-app/src/guis/GuiVideoScreensaverOptions.cpp:118
+msgid "GOT IT!"
+msgstr "ПОНЯТНО!"
+
+#: es-app/src/main.cpp:271
+msgid ""
+"IT LOOKS LIKE YOUR SYSTEMS CONFIGURATION FILE HAS NOT BEEN SET UP OR IS INVALID. YOU'LL NEED TO DO THIS BY HAND, UNFORTUNATELY.\n"
+"\n"
+"VISIT EMULATIONSTATION.ORG FOR MORE INFORMATION."
+msgstr ""
+"ПОХОЖЕ, ФАЙЛ НАСТРОЙКИ СИСТЕМ НЕ СОЗДАН ИЛИ СОДЕРЖИТ ОШИБКИ. К СОЖАЛЕНИЮ, ПОПРАВИТЬ ЕГО ПРИДЁТСЯ ВРУЧНУЮ.\n"
+"\n"
+"ПОДРОБНЕЕ — НА EMULATIONSTATION.ORG."
+
+#: es-app/src/main.cpp:279
+msgid ""
+"WE CAN'T FIND ANY SYSTEMS!\n"
+"CHECK THAT YOUR PATHS ARE CORRECT IN THE SYSTEMS CONFIGURATION FILE, AND YOUR GAME DIRECTORY HAS AT LEAST ONE GAME WITH THE CORRECT EXTENSION.\n"
+"\n"
+"VISIT EMULATIONSTATION.ORG FOR MORE INFORMATION."
+msgstr ""
+"НЕ НАЙДЕНО НИ ОДНОЙ СИСТЕМЫ!\n"
+"ПРОВЕРЬТЕ ПУТИ В ФАЙЛЕ НАСТРОЙКИ СИСТЕМ И ЧТО В ПАПКЕ С ИГРАМИ ЕСТЬ ХОТЯ БЫ ОДНА ИГРА С ПОДХОДЯЩИМ РАСШИРЕНИЕМ.\n"
+"\n"
+"ПОДРОБНЕЕ — НА EMULATIONSTATION.ORG."
+
+#: es-app/src/main.cpp:373
+msgid "Loading system config..."
+msgstr "Загрузка настроек систем..."
+
+#: es-app/src/main.cpp:411
+msgid "Done."
+msgstr "Готово."
+
+#: es-app/src/scrapers/Scraper.cpp:217
+#, c-format
+msgid "Network error: %s"
+msgstr "Ошибка сети: %s"
+
+#: es-app/src/scrapers/Scraper.cpp:226
+msgid "Failed to open image path to write. Permission error? Disk full?"
+msgstr "Не удалось открыть файл изображения на запись. Нет прав? Диск заполнен?"
+
+#: es-app/src/scrapers/Scraper.cpp:235
+msgid "Failed to save image. Disk full?"
+msgstr "Не удалось сохранить изображение. Диск заполнен?"
+
+#: es-app/src/scrapers/Scraper.cpp:242
+msgid "Error saving resized image. Out of memory? Disk full?"
+msgstr "Ошибка при сохранении уменьшенного изображения. Не хватает памяти? Диск заполнен?"
+
+#: es-app/src/views/SystemView.cpp:21
+msgid "SYSTEM INFO"
+msgstr "СВЕДЕНИЯ О СИСТЕМЕ"
+
+#: es-app/src/views/SystemView.cpp:127
+msgid ""
+"The selected UI mode has nothing to show,\n"
+" returning to UI mode: FULL"
+msgstr ""
+"В выбранном режиме интерфейса нечего показать,\n"
+" возврат в режим: ПОЛНЫЙ"
+
+#: es-app/src/views/SystemView.cpp:263
+msgid "CONFIGURATION"
+msgstr "НАСТРОЙКА"
+
+#: es-app/src/views/SystemView.cpp:265
+#, c-format
+msgid "%i GAME AVAILABLE"
+msgid_plural "%i GAMES AVAILABLE"
+msgstr[0] "%i ИГРА ДОСТУПНА"
+msgstr[1] "%i ИГРЫ ДОСТУПНО"
+msgstr[2] "%i ИГР ДОСТУПНО"
+
+#: es-app/src/views/SystemView.cpp:389
+msgid "launch screensaver"
+msgstr "заставка"
+
+#: es-app/src/views/UIModeController.h:42
+msgid "Full"
+msgstr "Полный"
+
+#: es-app/src/views/UIModeController.h:42
+msgid "Kiosk"
+msgstr "Киоск"
+
+#: es-app/src/views/UIModeController.h:42
+msgid "Kid"
+msgstr "Детский"
+
+#: es-app/src/views/ViewController.cpp:81
+msgid "Loading..."
+msgstr "Загрузка..."
+
+#: es-app/src/views/ViewController.cpp:510
+#: es-app/src/views/ViewController.cpp:517
+msgid "Preloading UI"
+msgstr "Подготовка интерфейса"
+
+#: es-app/src/views/ViewController.cpp:617
+msgid "menu"
+msgstr "меню"
+
+#. empty list - add a placeholder
+#. TRANSLATORS: the text is the placeholder's file name: no "/" and no "."
+#. empty grid - add a placeholder
+#. TRANSLATORS: the text is the placeholder's file name: no "/" and no "."
+#: es-app/src/views/gamelist/BasicGameListView.cpp:119
+#: es-app/src/views/gamelist/GridGameListView.cpp:383
+msgid "<No Entries Found>"
+msgstr "<Ничего не найдено>"
+
+#: es-app/src/views/gamelist/BasicGameListView.cpp:219
+#: es-app/src/views/gamelist/GridGameListView.cpp:480
+msgid "system"
+msgstr "система"
+
+#: es-app/src/views/gamelist/BasicGameListView.cpp:221
+#: es-app/src/views/gamelist/GridGameListView.cpp:482
+msgid "launch"
+msgstr "запуск"
+
+#: es-app/src/views/gamelist/BasicGameListView.cpp:224
+#: es-app/src/views/gamelist/GridGameListView.cpp:485
+msgid "options"
+msgstr "параметры"
+
+#. metadata labels + values
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:56
+#: es-app/src/views/gamelist/GridGameListView.cpp:50
+#: es-app/src/views/gamelist/VideoGameListView.cpp:84
+msgid "Rating: "
+msgstr "Рейтинг: "
+
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:59
+#: es-app/src/views/gamelist/GridGameListView.cpp:53
+#: es-app/src/views/gamelist/VideoGameListView.cpp:87
+msgid "Released: "
+msgstr "Выпуск: "
+
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:62
+#: es-app/src/views/gamelist/GridGameListView.cpp:56
+#: es-app/src/views/gamelist/VideoGameListView.cpp:90
+msgid "Developer: "
+msgstr "Разработчик: "
+
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:65
+#: es-app/src/views/gamelist/GridGameListView.cpp:59
+#: es-app/src/views/gamelist/VideoGameListView.cpp:93
+msgid "Publisher: "
+msgstr "Издатель: "
+
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:68
+#: es-app/src/views/gamelist/GridGameListView.cpp:62
+#: es-app/src/views/gamelist/VideoGameListView.cpp:96
+msgid "Genre: "
+msgstr "Жанр: "
+
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:71
+#: es-app/src/views/gamelist/GridGameListView.cpp:65
+#: es-app/src/views/gamelist/VideoGameListView.cpp:99
+msgid "Players: "
+msgstr "Игроки: "
+
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:74
+#: es-app/src/views/gamelist/GridGameListView.cpp:68
+#: es-app/src/views/gamelist/VideoGameListView.cpp:102
+msgid "Last played: "
+msgstr "Последний запуск: "
+
+#: es-app/src/views/gamelist/DetailedGameListView.cpp:78
+#: es-app/src/views/gamelist/GridGameListView.cpp:72
+#: es-app/src/views/gamelist/VideoGameListView.cpp:106
+msgid "Times played: "
+msgstr "Запусков: "
+
+#: es-core/src/components/BusyComponent.cpp:22
+msgid "WORKING..."
+msgstr "ПОДОЖДИТЕ..."
+
+#: es-core/src/components/DateTimeComponent.cpp:68
+#: es-core/src/components/DateTimeEditComponent.cpp:220
+#, c-format
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] "%d день назад"
+msgstr[1] "%d дня назад"
+msgstr[2] "%d дней назад"
+
+#: es-core/src/components/DateTimeComponent.cpp:70
+#: es-core/src/components/DateTimeEditComponent.cpp:222
+#, c-format
+msgid "%d hour ago"
+msgid_plural "%d hours ago"
+msgstr[0] "%d час назад"
+msgstr[1] "%d часа назад"
+msgstr[2] "%d часов назад"
+
+#: es-core/src/components/DateTimeComponent.cpp:72
+#: es-core/src/components/DateTimeEditComponent.cpp:224
+#, c-format
+msgid "%d minute ago"
+msgid_plural "%d minutes ago"
+msgstr[0] "%d минуту назад"
+msgstr[1] "%d минуты назад"
+msgstr[2] "%d минут назад"
+
+#: es-core/src/components/DateTimeComponent.cpp:74
+#: es-core/src/components/DateTimeEditComponent.cpp:226
+#, c-format
+msgid "%d second ago"
+msgid_plural "%d seconds ago"
+msgstr[0] "%d секунду назад"
+msgstr[1] "%d секунды назад"
+msgstr[2] "%d секунд назад"
+
+#: es-core/src/components/DateTimeComponent.cpp:80
+#: es-core/src/components/DateTimeEditComponent.cpp:205
+msgid "unknown"
+msgstr "неизвестно"
+
+#: es-core/src/components/DateTimeComponent.h:30
+msgid "MM/DD/YYYY"
+msgstr "ММ/ДД/ГГГГ"
+
+#: es-core/src/components/OptionListComponent.h:91
+msgid "accept"
+msgstr "принять"
+
+#: es-core/src/components/OptionListComponent.h:95
+msgid "SELECT ALL"
+msgstr "ВЫБРАТЬ ВСЁ"
+
+#: es-core/src/components/OptionListComponent.h:95
+msgid "select all"
+msgstr "выбрать всё"
+
+#: es-core/src/components/OptionListComponent.h:104
+msgid "SELECT NONE"
+msgstr "СНЯТЬ ВСЁ"
+
+#: es-core/src/components/OptionListComponent.h:104
+msgid "select none"
+msgstr "снять всё"
+
+#: es-core/src/components/OptionListComponent.h:297
+#, c-format
+msgid "%i SELECTED"
+msgstr "ВЫБРАНО: %i"
+
+#: es-core/src/components/OptionListComponent.h:324
+#: es-core/src/components/SliderComponent.cpp:141
+#: es-core/src/components/SwitchComponent.cpp:75
+msgid "change"
+msgstr "изменить"
+
+#: es-core/src/components/TextEditComponent.cpp:305
+msgid "move cursor"
+msgstr "курсор"
+
+#: es-core/src/components/TextEditComponent.cpp:306
+msgid "stop editing"
+msgstr "готово"
+
+#: es-core/src/components/TextEditComponent.cpp:308
+msgid "edit"
+msgstr "изменить"
+
+#. title
+#: es-core/src/guis/GuiDetectDevice.cpp:25
+msgid "WELCOME"
+msgstr "ДОБРО ПОЖАЛОВАТЬ"
+
+#: es-core/src/guis/GuiDetectDevice.cpp:34
+#, c-format
+msgid "%i GAMEPAD DETECTED"
+msgid_plural "%i GAMEPADS DETECTED"
+msgstr[0] "НАЙДЕН %i ГЕЙМПАД"
+msgstr[1] "НАЙДЕНО %i ГЕЙМПАДА"
+msgstr[2] "НАЙДЕНО %i ГЕЙМПАДОВ"
+
+#: es-core/src/guis/GuiDetectDevice.cpp:36
+msgid "NO GAMEPADS DETECTED"
+msgstr "ГЕЙМПАДЫ НЕ НАЙДЕНЫ"
+
+#. message
+#: es-core/src/guis/GuiDetectDevice.cpp:41
+msgid "HOLD A BUTTON ON YOUR DEVICE TO CONFIGURE IT."
+msgstr "ЧТОБЫ НАСТРОИТЬ УСТРОЙСТВО, УДЕРЖИВАЙТЕ НА НЁМ ЛЮБУЮ КНОПКУ."
+
+#: es-core/src/guis/GuiDetectDevice.cpp:44
+msgid "PRESS F4 TO QUIT AT ANY TIME."
+msgstr "F4 — ВЫХОД В ЛЮБОЙ МОМЕНТ."
+
+#: es-core/src/guis/GuiDetectDevice.cpp:44
+msgid "PRESS ESC TO CANCEL."
+msgstr "ESC — ОТМЕНА."
+
+#: es-core/src/guis/GuiInputConfig.cpp:22
+msgid "D-PAD UP"
+msgstr "КРЕСТОВИНА ВВЕРХ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:23
+msgid "D-PAD DOWN"
+msgstr "КРЕСТОВИНА ВНИЗ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:24
+msgid "D-PAD LEFT"
+msgstr "КРЕСТОВИНА ВЛЕВО"
+
+#: es-core/src/guis/GuiInputConfig.cpp:25
+msgid "D-PAD RIGHT"
+msgstr "КРЕСТОВИНА ВПРАВО"
+
+#: es-core/src/guis/GuiInputConfig.cpp:27
+msgid "SELECT"
+msgstr "SELECT"
+
+#: es-core/src/guis/GuiInputConfig.cpp:28
+msgid "BUTTON A / EAST"
+msgstr "КНОПКА A / ПРАВАЯ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:29
+msgid "BUTTON B / SOUTH"
+msgstr "КНОПКА B / НИЖНЯЯ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:30
+msgid "BUTTON X / NORTH"
+msgstr "КНОПКА X / ВЕРХНЯЯ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:31
+msgid "BUTTON Y / WEST"
+msgstr "КНОПКА Y / ЛЕВАЯ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:32
+msgid "LEFT SHOULDER"
+msgstr "ЛЕВЫЙ БАМПЕР"
+
+#: es-core/src/guis/GuiInputConfig.cpp:33
+msgid "RIGHT SHOULDER"
+msgstr "ПРАВЫЙ БАМПЕР"
+
+#: es-core/src/guis/GuiInputConfig.cpp:34
+msgid "LEFT TRIGGER"
+msgstr "ЛЕВЫЙ КУРОК"
+
+#: es-core/src/guis/GuiInputConfig.cpp:35
+msgid "RIGHT TRIGGER"
+msgstr "ПРАВЫЙ КУРОК"
+
+#: es-core/src/guis/GuiInputConfig.cpp:36
+msgid "LEFT THUMB"
+msgstr "НАЖАТИЕ ЛЕВОГО СТИКА"
+
+#: es-core/src/guis/GuiInputConfig.cpp:37
+msgid "RIGHT THUMB"
+msgstr "НАЖАТИЕ ПРАВОГО СТИКА"
+
+#: es-core/src/guis/GuiInputConfig.cpp:38
+msgid "LEFT ANALOG UP"
+msgstr "ЛЕВЫЙ СТИК ВВЕРХ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:39
+msgid "LEFT ANALOG DOWN"
+msgstr "ЛЕВЫЙ СТИК ВНИЗ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:40
+msgid "LEFT ANALOG LEFT"
+msgstr "ЛЕВЫЙ СТИК ВЛЕВО"
+
+#: es-core/src/guis/GuiInputConfig.cpp:41
+msgid "LEFT ANALOG RIGHT"
+msgstr "ЛЕВЫЙ СТИК ВПРАВО"
+
+#: es-core/src/guis/GuiInputConfig.cpp:42
+msgid "RIGHT ANALOG UP"
+msgstr "ПРАВЫЙ СТИК ВВЕРХ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:43
+msgid "RIGHT ANALOG DOWN"
+msgstr "ПРАВЫЙ СТИК ВНИЗ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:44
+msgid "RIGHT ANALOG LEFT"
+msgstr "ПРАВЫЙ СТИК ВЛЕВО"
+
+#: es-core/src/guis/GuiInputConfig.cpp:45
+msgid "RIGHT ANALOG RIGHT"
+msgstr "ПРАВЫЙ СТИК ВПРАВО"
+
+#: es-core/src/guis/GuiInputConfig.cpp:46
+msgid "HOTKEY ENABLE"
+msgstr "КНОПКА HOTKEY"
+
+#: es-core/src/guis/GuiInputConfig.cpp:72
+msgid "CONFIGURING"
+msgstr "НАСТРОЙКА"
+
+#: es-core/src/guis/GuiInputConfig.cpp:77
+msgid "KEYBOARD"
+msgstr "КЛАВИАТУРА"
+
+#: es-core/src/guis/GuiInputConfig.cpp:81
+#, c-format
+msgid "GAMEPAD %i"
+msgstr "ГЕЙМПАД %i"
+
+#: es-core/src/guis/GuiInputConfig.cpp:85
+msgid "HOLD ANY BUTTON TO SKIP"
+msgstr "УДЕРЖИВАЙТЕ ЛЮБУЮ КНОПКУ, ЧТОБЫ ПРОПУСТИТЬ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:112
+#: es-core/src/guis/GuiInputConfig.cpp:298
+msgid "-NOT DEFINED-"
+msgstr "-НЕ ЗАДАНО-"
+
+#: es-core/src/guis/GuiInputConfig.cpp:197
+msgid "YOU DIDN'T CHOOSE A HOTKEY ENABLE BUTTON. THIS IS REQUIRED FOR EXITING GAMES WITH A CONTROLLER. DO YOU WANT TO USE THE SELECT BUTTON DEFAULT ? PLEASE ANSWER YES TO USE SELECT OR NO TO NOT SET A HOTKEY ENABLE BUTTON."
+msgstr "ВЫ НЕ ВЫБРАЛИ КНОПКУ HOTKEY. ОНА НУЖНА, ЧТОБЫ ВЫХОДИТЬ ИЗ ИГР С ГЕЙМПАДА. НАЗНАЧИТЬ HOTKEY КНОПКУ SELECT? ДА — НАЗНАЧИТЬ SELECT, НЕТ — ОСТАВИТЬ БЕЗ КНОПКИ HOTKEY."
+
+#: es-core/src/guis/GuiInputConfig.cpp:260
+#, c-format
+msgid "HOLD FOR %iS TO SKIP"
+msgstr "ДЕРЖИТЕ %i С, ЧТОБЫ ПРОПУСТИТЬ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:292
+msgid "PRESS ANYTHING"
+msgstr "НАЖМИТЕ КНОПКУ"
+
+#: es-core/src/guis/GuiInputConfig.cpp:310
+msgid "ALREADY TAKEN"
+msgstr "УЖЕ ЗАНЯТО"
+
+#: es-core/src/guis/GuiTextEditPopup.cpp:25
+msgid "discard changes"
+msgstr "отменить изменения"

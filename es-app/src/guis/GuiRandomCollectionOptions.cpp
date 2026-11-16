@@ -5,13 +5,14 @@
 #include "components/SwitchComponent.h"
 #include "guis/GuiSettings.h"
 #include "guis/GuiTextEditPopup.h"
+#include "utils/I18n.h"
 #include "utils/StringUtil.h"
 #include "views/ViewController.h"
 #include "CollectionSystemManager.h"
 #include "SystemData.h"
 #include "Window.h"
 
-GuiRandomCollectionOptions::GuiRandomCollectionOptions(Window* window) : GuiComponent(window), mMenu(window, "RANDOM COLLECTION")
+GuiRandomCollectionOptions::GuiRandomCollectionOptions(Window* window) : GuiComponent(window), mMenu(window, _("RANDOM COLLECTION"))
 {
 	customCollectionLists.clear();
 	autoCollectionLists.clear();
@@ -24,15 +25,15 @@ GuiRandomCollectionOptions::GuiRandomCollectionOptions(Window* window) : GuiComp
 void GuiRandomCollectionOptions::initializeMenu()
 {
 	// get collections
-	addEntry("INCLUDE SYSTEMS", 0x777777FF, true, [this] { selectSystems(); });
-	addEntry("INCLUDE AUTO COLLECTIONS", 0x777777FF, true, [this] { selectAutoCollections(); });
-	addEntry("INCLUDE CUSTOM COLLECTIONS", 0x777777FF, true, [this] { selectCustomCollections(); });
+	addEntry(_("INCLUDE SYSTEMS"), 0x777777FF, true, [this] { selectSystems(); });
+	addEntry(_("INCLUDE AUTO COLLECTIONS"), 0x777777FF, true, [this] { selectAutoCollections(); });
+	addEntry(_("INCLUDE CUSTOM COLLECTIONS"), 0x777777FF, true, [this] { selectCustomCollections(); });
 
 	// Add option to exclude games from a collection
-	exclusionCollection = std::make_shared< OptionListComponent<std::string> >(mWindow, "EXCLUDE GAMES FROM", false);
+	exclusionCollection = std::make_shared< OptionListComponent<std::string> >(mWindow, _("EXCLUDE GAMES FROM"), false);
 
 	// Add default option
-	exclusionCollection->add("<NONE>", "", Settings::getInstance()->getString("RandomCollectionExclusionCollection") == "");
+	exclusionCollection->add(_("<NONE>"), "", Settings::getInstance()->getString("RandomCollectionExclusionCollection") == "");
 
 	std::map<std::string, CollectionSystemData> customSystems = CollectionSystemManager::get()->getCustomCollectionSystems();
 	// add all enabled Custom Systems
@@ -41,14 +42,14 @@ void GuiRandomCollectionOptions::initializeMenu()
 		exclusionCollection->add(it->second.decl.longName, it->second.decl.name, Settings::getInstance()->getString("RandomCollectionExclusionCollection") == it->second.decl.name);
 	}
 
-	mMenu.addWithLabel("EXCLUDE GAMES FROM", exclusionCollection);
+	mMenu.addWithLabel(_("EXCLUDE GAMES FROM"), exclusionCollection);
 
 	// Add option to trim random collection items
-	trimRandom = std::make_shared<NumberList>(mWindow, "MAX GAMES", false);
+	trimRandom = std::make_shared<NumberList>(mWindow, _("MAX GAMES"), false);
 
 	// Add default entry
 	int maxGames = Settings::getInstance()->getInt("RandomCollectionMaxGames");
-	trimRandom->add("ALL", 0, maxGames == 0);
+	trimRandom->add(_("ALL"), 0, maxGames == 0);
 
 	// add limit values for size of random collection
 	for(int i = 5; i <= 50; i = i+5)
@@ -56,12 +57,12 @@ void GuiRandomCollectionOptions::initializeMenu()
 		trimRandom->add(std::to_string(i), i, maxGames == i);
 	}
 
-	mMenu.addWithLabel("MAX GAMES", trimRandom);
+	mMenu.addWithLabel(_("MAX GAMES"), trimRandom);
 
 	addChild(&mMenu);
 
-	mMenu.addButton("OK", "ok", std::bind(&GuiRandomCollectionOptions::saveSettings, this));
-	mMenu.addButton("CANCEL", "cancel", [&] { delete this; });
+	mMenu.addButton(_("OK"), _("ok"), std::bind(&GuiRandomCollectionOptions::saveSettings, this));
+	mMenu.addButton(_("CANCEL"), _("cancel"), [&] { delete this; });
 
 	mMenu.setPosition((Renderer::getScreenWidth() - mMenu.getSize().x()) / 2, Renderer::getScreenHeight() * 0.15f);
 }
@@ -124,7 +125,7 @@ GuiRandomCollectionOptions::~GuiRandomCollectionOptions()
 }
 
 void GuiRandomCollectionOptions::selectEntries(std::map<std::string, CollectionSystemData> collection, std::string settingsLabel, int defaultValue, std::vector< SystemGames>* results) {
-	auto s = new GuiSettings(mWindow, "INCLUDE GAMES FROM");
+	auto s = new GuiSettings(mWindow, _("INCLUDE GAMES FROM"));
 
 	std::map<std::string, int> initValues = Settings::getInstance()->getMap(settingsLabel);
 
@@ -150,12 +151,12 @@ void GuiRandomCollectionOptions::selectEntries(std::map<std::string, CollectionS
 
 			initValues[label] = selectedValue;
 
-			std::shared_ptr<NumberList> colItems = std::make_shared<NumberList>(mWindow, label, false);
+			std::shared_ptr<NumberList> colItems = std::make_shared<NumberList>(mWindow, Utils::I18n::tr(label), false);
 			for (int i = 0; i <= RANDOM_SYSTEM_MAX; i++)
 			{
 				colItems->add(std::to_string(i), i, i == selectedValue);
 			}
-			row.addElement(std::make_shared<TextComponent>(mWindow, Utils::String::toUpper(label), Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
+			row.addElement(std::make_shared<TextComponent>(mWindow, Utils::String::toUpper(Utils::I18n::tr(label)), Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
 			row.addElement(colItems, false);
 
 			s->addRow(row);
@@ -223,6 +224,6 @@ bool GuiRandomCollectionOptions::input(InputConfig* config, Input input)
 std::vector<HelpPrompt> GuiRandomCollectionOptions::getHelpPrompts()
 {
 	std::vector<HelpPrompt> prompts = mMenu.getHelpPrompts();
-	prompts.push_back(HelpPrompt("b", "back"));
+	prompts.push_back(HelpPrompt("b", _("back")));
 	return prompts;
 }

@@ -3,6 +3,7 @@
 #include "resources/ResourceManager.h"
 #include "Settings.h"
 #include "utils/FileSystemUtil.h"
+#include "utils/I18n.h"
 #include "PowerSaver.h"
 #include "ThemeData.h"
 #include "Window.h"
@@ -223,7 +224,7 @@ void VideoComponent::applyTheme(const std::shared_ptr<ThemeData>& theme, const s
 std::vector<HelpPrompt> VideoComponent::getHelpPrompts()
 {
 	std::vector<HelpPrompt> ret;
-	ret.push_back(HelpPrompt("a", "select"));
+	ret.push_back(HelpPrompt("a", _("select")));
 	return ret;
 }
 

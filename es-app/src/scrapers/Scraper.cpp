@@ -1,5 +1,7 @@
 #include "scrapers/Scraper.h"
 
+#include "utils/I18n.h"
+#include "utils/StringUtil.h"
 #include "FileData.h"
 #include "GamesDBJSONScraper.h"
 #include "ScreenScraper.h"
@@ -212,7 +214,7 @@ void ImageDownloadHandle::update()
 	if(mReq->status() != HttpReq::REQ_SUCCESS)
 	{
 		std::stringstream ss;
-		ss << "Network error: " << mReq->getErrorMsg();
+		ss << Utils::String::format(_("Network error: %s"), mReq->getErrorMsg().c_str());
 		setError(ss.str());
 		return;
 	}
@@ -221,7 +223,7 @@ void ImageDownloadHandle::update()
 	std::ofstream stream(mSavePath, std::ios_base::out | std::ios_base::binary);
 	if(stream.bad())
 	{
-		setError("Failed to open image path to write. Permission error? Disk full?");
+		setError(_("Failed to open image path to write. Permission error? Disk full?"));
 		return;
 	}
 
@@ -230,14 +232,14 @@ void ImageDownloadHandle::update()
 	stream.close();
 	if(stream.bad())
 	{
-		setError("Failed to save image. Disk full?");
+		setError(_("Failed to save image. Disk full?"));
 		return;
 	}
 
 	// resize it
 	if(!resizeImage(mSavePath, mMaxWidth, mMaxHeight))
 	{
-		setError("Error saving resized image. Out of memory? Disk full?");
+		setError(_("Error saving resized image. Out of memory? Disk full?"));
 		return;
 	}
 

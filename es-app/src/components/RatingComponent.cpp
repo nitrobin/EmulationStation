@@ -1,6 +1,7 @@
 #include "components/RatingComponent.h"
 
 #include "resources/TextureResource.h"
+#include "utils/I18n.h"
 #include "ThemeData.h"
 
 RatingComponent::RatingComponent(Window* window) : GuiComponent(window), mColorShift(0xFFFFFFFF)
@@ -166,6 +167,6 @@ void RatingComponent::applyTheme(const std::shared_ptr<ThemeData>& theme, const 
 std::vector<HelpPrompt> RatingComponent::getHelpPrompts()
 {
 	std::vector<HelpPrompt> prompts;
-	prompts.push_back(HelpPrompt("a", "add star"));
+	prompts.push_back(HelpPrompt("a", _("add star")));
 	return prompts;
 }

@@ -3,6 +3,7 @@
 #include "components/TextListComponent.h"
 #include "guis/GuiInfoPopup.h"
 #include "utils/FileSystemUtil.h"
+#include "utils/I18n.h"
 #include "utils/StringUtil.h"
 #include "views/gamelist/IGameListView.h"
 #include "views/gamelist/ISimpleGameListView.h"
@@ -25,11 +26,11 @@ CollectionSystemManager::CollectionSystemManager(Window* window) : mWindow(windo
 {
 	CollectionSystemDecl systemDecls[] = {
 		//type                  name             long name (display)  default sort (key, order)   theme folder            isCustom
-		{ AUTO_ALL_GAMES,       "all",           "all games",         "name, ascending",          "auto-allgames",        false },
-		{ AUTO_LAST_PLAYED,     "recent",        "last played",       "last played, descending",  "auto-lastplayed",      false },
-		{ AUTO_FAVORITES,       "favorites",     "favorites",         "name, ascending",          "auto-favorites",       false },
-		{ AUTO_RANDOM,          RANDOM_COLL_ID,  "random",            "name, ascending",          "auto-random",          false },
-		{ CUSTOM_COLLECTION,    CUSTOM_COLL_ID,  "collections",       "name, ascending",          "custom-collections",   true  }
+		{ AUTO_ALL_GAMES,       "all",           N_("all games"),     "name, ascending",          "auto-allgames",        false },
+		{ AUTO_LAST_PLAYED,     "recent",        N_("last played"),   "last played, descending",  "auto-lastplayed",      false },
+		{ AUTO_FAVORITES,       "favorites",     N_("favorites"),     "name, ascending",          "auto-favorites",       false },
+		{ AUTO_RANDOM,          RANDOM_COLL_ID,  N_("random"),        "name, ascending",          "auto-random",          false },
+		{ CUSTOM_COLLECTION,    CUSTOM_COLL_ID,  N_("collections"),   "name, ascending",          "custom-collections",   true  }
 	};
 
 	// create a map
@@ -55,7 +56,7 @@ CollectionSystemManager::CollectionSystemManager(Window* window) : mWindow(windo
 		Utils::FileSystem::createDirectory(path);
 
 	mIsEditingCustom = false;
-	mEditingCollection = "Favorites";
+	mEditingCollection = N_("Favorites");
 	mEditingCollectionSystemData = NULL;
 	mCustomCollectionsBundle = NULL;
 	mRandomCollection = NULL;
@@ -458,7 +459,7 @@ void CollectionSystemManager::setEditMode(std::string collectionName, bool quiet
 	mEditingCollectionSystemData = sysData;
 
 	if (!quiet) {
-		GuiInfoPopup* s = new GuiInfoPopup(mWindow, "Editing the '" + Utils::String::toUpper(collectionName) + "' Collection. Add/remove games with Y.", 8000);
+		GuiInfoPopup* s = new GuiInfoPopup(mWindow, Utils::String::format(_("Editing the '%s' Collection. Add/remove games with Y."), Utils::String::toUpper(collectionName).c_str()), 8000);
 		mWindow->setInfoPopup(s);
 	}
 }
@@ -466,7 +467,7 @@ void CollectionSystemManager::setEditMode(std::string collectionName, bool quiet
 void CollectionSystemManager::exitEditMode(bool quiet)
 {
 	if (!quiet) {
-		GuiInfoPopup* s = new GuiInfoPopup(mWindow, "Finished editing the '" +  Utils::String::toUpper(mEditingCollection) + "' Collection.", 4000);
+		GuiInfoPopup* s = new GuiInfoPopup(mWindow, Utils::String::format(_("Finished editing the '%s' Collection."), Utils::String::toUpper(mEditingCollection).c_str()), 4000);
 		mWindow->setInfoPopup(s);
 	}
 	if (mIsEditingCustom) {
@@ -576,11 +577,11 @@ bool CollectionSystemManager::toggleGameInCollection(FileData* file)
 		}
 		if (adding)
 		{
-			s = new GuiInfoPopup(mWindow, "Added '" + Utils::String::removeParenthesis(name) + "' to '" + Utils::String::toUpper(sysName) + "'", 4000);
+			s = new GuiInfoPopup(mWindow, Utils::String::format(_("Added '%s' to '%s'"), Utils::String::removeParenthesis(name).c_str(), Utils::String::toUpper(Utils::I18n::tr(sysName)).c_str()), 4000);
 		}
 		else
 		{
-			s = new GuiInfoPopup(mWindow, "Removed '" + Utils::String::removeParenthesis(name) + "' from '" + Utils::String::toUpper(sysName) + "'", 4000);
+			s = new GuiInfoPopup(mWindow, Utils::String::format(_("Removed '%s' from '%s'"), Utils::String::removeParenthesis(name).c_str(), Utils::String::toUpper(Utils::I18n::tr(sysName)).c_str()), 4000);
 		}
 
 		mWindow->setInfoPopup(s);
@@ -679,12 +680,12 @@ void CollectionSystemManager::updateCollectionFolderMetadata(SystemData* sys)
 {
 	FileData* rootFolder = sys->getRootFolder();
 
-	std::string desc = "This collection is empty.";
+	std::string desc = _("This collection is empty.");
 	std::string rating = "0";
 	std::string players = "1";
 	std::string releasedate = "N/A";
-	std::string developer = "None";
-	std::string genre = "None";
+	std::string developer = _("None");
+	std::string genre = _("None");
 	std::string video = "";
 	std::string thumbnail = "";
 	std::string image = "";
@@ -709,8 +710,8 @@ void CollectionSystemManager::updateCollectionFolderMetadata(SystemData* sys)
 			rating = (new_rating > rating ? (new_rating != "" ? new_rating : rating) : rating);
 			players = (new_players > players ? (new_players != "" ? new_players : players) : players);
 			releasedate = (new_releasedate < releasedate ? (new_releasedate != "" ? new_releasedate : releasedate) : releasedate);
-			developer = (developer == "None" ? new_developer : (new_developer != developer ? "Various" : new_developer));
-			genre = (genre == "None" ? new_genre : (new_genre != genre ? "Various" : new_genre));
+			developer = (developer == _("None") ? new_developer : (new_developer != developer ? _("Various") : new_developer));
+			genre = (genre == _("None") ? new_genre : (new_genre != genre ? _("Various") : new_genre));
 
 			switch(games_counter)
 			{
@@ -721,12 +722,12 @@ void CollectionSystemManager::updateCollectionFolderMetadata(SystemData* sys)
 					games_list += "'" + file->getName() + "'";
 					break;
 				case 4:
-					games_list += " among other titles.";
+					games_list += std::string(" ") + _("among other titles.");
 			}
 		}
 
-		desc = "This collection contains " + std::to_string(games_counter) + " game"
-				+ (games_counter == 1 ? "" : "s") + ", including " + games_list;
+		desc = Utils::String::format(Utils::I18n::trn("This collection contains %i game, including %s", "This collection contains %i games, including %s", games_counter),
+				games_counter, games_list.c_str());
 
 		FileData* randomGame = sys->getRandomGame();
 
@@ -1306,8 +1307,8 @@ bool CollectionSystemManager::includeFileInAutoCollections(FileData* file)
 bool CollectionSystemManager::needDoublePress(int presscount) {
 	if (Settings::getInstance()->getBool("DoublePressRemovesFromFavs") && presscount < 2)
 	{
-		GuiInfoPopup* toast = new GuiInfoPopup(mWindow, "Press again to remove from '" + Utils::String::toUpper(mEditingCollection)
-		+ "'", DOUBLE_PRESS_DETECTION_DURATION, 100, 200);
+		GuiInfoPopup* toast = new GuiInfoPopup(mWindow, Utils::String::format(_("Press again to remove from '%s'"), Utils::String::toUpper(Utils::I18n::tr(mEditingCollection)).c_str()),
+		DOUBLE_PRESS_DETECTION_DURATION, 100, 200);
 		mWindow->setInfoPopup(toast);
 		return true;
 	}

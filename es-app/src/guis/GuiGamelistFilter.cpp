@@ -2,9 +2,11 @@
 
 #include "components/OptionListComponent.h"
 #include "views/UIModeController.h"
+#include "utils/I18n.h"
+#include "utils/StringUtil.h"
 #include "SystemData.h"
 
-GuiGamelistFilter::GuiGamelistFilter(Window* window, SystemData* system) : GuiComponent(window), mMenu(window, "FILTER GAMELIST BY"), mSystem(system)
+GuiGamelistFilter::GuiGamelistFilter(Window* window, SystemData* system) : GuiComponent(window), mMenu(window, _("FILTER GAMELIST BY")), mSystem(system)
 {
 	initializeMenu();
 }
@@ -21,14 +23,14 @@ void GuiGamelistFilter::initializeMenu()
 
 	// show filtered menu
 	row.elements.clear();
-	row.addElement(std::make_shared<TextComponent>(mWindow, "RESET ALL FILTERS", Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
+	row.addElement(std::make_shared<TextComponent>(mWindow, _("RESET ALL FILTERS"), Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
 	row.makeAcceptInputHandler(std::bind(&GuiGamelistFilter::resetAllFilters, this));
 	mMenu.addRow(row);
 	row.elements.clear();
 
 	addFiltersToMenu();
 
-	mMenu.addButton("BACK", "back", std::bind(&GuiGamelistFilter::applyFilters, this));
+	mMenu.addButton(_("BACK"), _("back"), std::bind(&GuiGamelistFilter::applyFilters, this));
 
 	mMenu.setPosition((Renderer::getScreenWidth() - mMenu.getSize().x()) / 2, Renderer::getScreenHeight() * 0.15f);
 }
@@ -61,7 +63,7 @@ void GuiGamelistFilter::addFiltersToMenu()
 
 		FilterIndexType type = (*it).type; // type of filter
 		std::map<std::string, int>* allKeys = (*it).allIndexKeys; // all possible filters for this type
-		std::string menuLabel = (*it).menuLabel; // text to show in menu
+		std::string menuLabel = Utils::I18n::tr((*it).menuLabel); // text to show in menu
 		std::shared_ptr< OptionListComponent<std::string> > optionList;
 
 
@@ -72,7 +74,18 @@ void GuiGamelistFilter::addFiltersToMenu()
 		optionList = std::make_shared< OptionListComponent<std::string> >(mWindow, menuLabel, true);
 		for(auto it: *allKeys)
 		{
-			optionList->add(it.first, it.first, mFilterIndex->isKeyBeingFilteredBy(it.first, type));
+			// shown name of a key; the key itself stays untranslated
+			std::string keyLabel = it.first;
+			if (keyLabel == "UNKNOWN")
+				keyLabel = _("UNKNOWN");
+			else if ((type == FAVORITES_FILTER || type == HIDDEN_FILTER || type == KIDGAME_FILTER) && (keyLabel == "TRUE" || keyLabel == "FALSE"))
+				keyLabel = keyLabel == "TRUE" ? _("TRUE") : _("FALSE");
+			else if (type == RATINGS_FILTER && Utils::String::endsWith(keyLabel, " STARS"))
+			{
+				const int stars = atoi(keyLabel.c_str());
+				keyLabel = Utils::String::format(Utils::I18n::trn("%i STARS", "%i STARS", stars), stars);
+			}
+			optionList->add(keyLabel, it.first, mFilterIndex->isKeyBeingFilteredBy(it.first, type));
 		}
 		if (allKeys->size() > 0)
 			mMenu.addWithLabel(menuLabel, optionList);
@@ -112,6 +125,6 @@ bool GuiGamelistFilter::input(InputConfig* config, Input input)
 std::vector<HelpPrompt> GuiGamelistFilter::getHelpPrompts()
 {
 	std::vector<HelpPrompt> prompts = mMenu.getHelpPrompts();
-	prompts.push_back(HelpPrompt("b", "back"));
+	prompts.push_back(HelpPrompt("b", _("back")));
 	return prompts;
 }

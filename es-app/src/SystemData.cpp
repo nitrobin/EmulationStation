@@ -12,6 +12,7 @@
 #include "views/UIModeController.h"
 #include <fstream>
 #include <random>
+#include "utils/I18n.h"
 #include "utils/StringUtil.h"
 #include "utils/ThreadPool.h"
 #include "Window.h"
@@ -375,14 +376,14 @@ bool SystemData::loadConfig(Window* window)
 		delete pThreadPool;
 
 		if (window != NULL)
-			window->renderLoadingScreen("Favorites", systemCount == 0 ? 0 : currentSystem / systemCount);
+			window->renderLoadingScreen(_("Favorites"), systemCount == 0 ? 0 : currentSystem / systemCount);
 
 		CollectionSystemManager::get()->updateSystemsList();
 	}
 	else
 	{
 		if (window != NULL)
-			window->renderLoadingScreen("Favorites", systemCount == 0 ? 0 : currentSystem / systemCount);
+			window->renderLoadingScreen(_("Favorites"), systemCount == 0 ? 0 : currentSystem / systemCount);
 
 		CollectionSystemManager::get()->loadCollectionSystems();
 	}

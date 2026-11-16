@@ -3,6 +3,7 @@
 #include "animations/LambdaAnimation.h"
 #include "views/UIModeController.h"
 #include "views/ViewController.h"
+#include "utils/I18n.h"
 #include "CollectionSystemManager.h"
 #include "Settings.h"
 #include "SystemData.h"
@@ -46,29 +47,29 @@ GridGameListView::GridGameListView(Window* window, FileData* root) :
 	populateList(root->getChildrenListToDisplay());
 
 	// metadata labels + values
-	mLblRating.setText("Rating: ");
+	mLblRating.setText(_("Rating: "));
 	addChild(&mLblRating);
 	addChild(&mRating);
-	mLblReleaseDate.setText("Released: ");
+	mLblReleaseDate.setText(_("Released: "));
 	addChild(&mLblReleaseDate);
 	addChild(&mReleaseDate);
-	mLblDeveloper.setText("Developer: ");
+	mLblDeveloper.setText(_("Developer: "));
 	addChild(&mLblDeveloper);
 	addChild(&mDeveloper);
-	mLblPublisher.setText("Publisher: ");
+	mLblPublisher.setText(_("Publisher: "));
 	addChild(&mLblPublisher);
 	addChild(&mPublisher);
-	mLblGenre.setText("Genre: ");
+	mLblGenre.setText(_("Genre: "));
 	addChild(&mLblGenre);
 	addChild(&mGenre);
-	mLblPlayers.setText("Players: ");
+	mLblPlayers.setText(_("Players: "));
 	addChild(&mLblPlayers);
 	addChild(&mPlayers);
-	mLblLastPlayed.setText("Last played: ");
+	mLblLastPlayed.setText(_("Last played: "));
 	addChild(&mLblLastPlayed);
 	mLastPlayed.setDisplayRelative(true);
 	addChild(&mLastPlayed);
-	mLblPlayCount.setText("Times played: ");
+	mLblPlayCount.setText(_("Times played: "));
 	addChild(&mLblPlayCount);
 	addChild(&mPlayCount);
 
@@ -173,7 +174,7 @@ const std::string GridGameListView::getImagePath(FileData* file)
 void GridGameListView::populateList(const std::vector<FileData*>& files)
 {
 	mGrid.clear();
-	mHeaderText.setText(mRoot->getSystem()->getFullName());
+	mHeaderText.setText(Utils::I18n::tr(mRoot->getSystem()->getFullName()));
 	if (files.size() > 0)
 	{
 		for (auto it = files.cbegin(); it != files.cend(); it++)
@@ -378,7 +379,8 @@ void GridGameListView::updateInfoPanel()
 void GridGameListView::addPlaceholder()
 {
 	// empty grid - add a placeholder
-	FileData* placeholder = new FileData(PLACEHOLDER, "<No Entries Found>", this->mRoot->getSystem()->getSystemEnvData(), this->mRoot->getSystem());
+	// TRANSLATORS: the text is the placeholder's file name: no "/" and no "."
+	FileData* placeholder = new FileData(PLACEHOLDER, _("<No Entries Found>"), this->mRoot->getSystem()->getSystemEnvData(), this->mRoot->getSystem());
 	mGrid.add(placeholder->getName(), "", placeholder);
 }
 
@@ -475,17 +477,17 @@ std::vector<HelpPrompt> GridGameListView::getHelpPrompts()
 	std::vector<HelpPrompt> prompts;
 
 	if(Settings::getInstance()->getBool("QuickSystemSelect"))
-		prompts.push_back(HelpPrompt("lr", "system"));
-	prompts.push_back(HelpPrompt("up/down/left/right", "choose"));
-	prompts.push_back(HelpPrompt("a", "launch"));
-	prompts.push_back(HelpPrompt("b", "back"));
+		prompts.push_back(HelpPrompt("lr", _("system")));
+	prompts.push_back(HelpPrompt("up/down/left/right", _("choose")));
+	prompts.push_back(HelpPrompt("a", _("launch")));
+	prompts.push_back(HelpPrompt("b", _("back")));
 	if(!UIModeController::getInstance()->isUIModeKid())
-		prompts.push_back(HelpPrompt("select", "options"));
+		prompts.push_back(HelpPrompt("select", _("options")));
 	if(mRoot->getSystem()->isGameSystem())
-		prompts.push_back(HelpPrompt("x", "random"));
+		prompts.push_back(HelpPrompt("x", _("random")));
 	if(mRoot->getSystem()->isGameSystem() && !UIModeController::getInstance()->isUIModeKid())
 	{
-		std::string prompt = CollectionSystemManager::get()->getEditingCollection();
+		std::string prompt = Utils::I18n::tr(CollectionSystemManager::get()->getEditingCollection());
 		prompts.push_back(HelpPrompt("y", prompt));
 	}
 	return prompts;

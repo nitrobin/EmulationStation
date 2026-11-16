@@ -2,6 +2,7 @@
 #ifndef ES_CORE_COMPONENTS_DATE_TIME_COMPONENT_H
 #define ES_CORE_COMPONENTS_DATE_TIME_COMPONENT_H
 
+#include "utils/I18n.h"
 #include "utils/TimeUtil.h"
 #include "TextComponent.h"
 
@@ -26,7 +27,7 @@ public:
 	virtual void applyTheme(const std::shared_ptr<ThemeData>& theme, const std::string& view, const std::string& element, unsigned int properties) override;
 
 	static std::string getDateformat() { return "%m/%d/%Y"; }
-	static std::string getDateformatTip() { return "MM/DD/YYYY"; }
+	static std::string getDateformatTip() { return _("MM/DD/YYYY"); }
 
 protected:
 	void onTextChanged() override;

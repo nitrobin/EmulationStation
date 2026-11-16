@@ -1,6 +1,7 @@
 #include "views/gamelist/BasicGameListView.h"
 
 #include "utils/FileSystemUtil.h"
+#include "utils/I18n.h"
 #include "views/UIModeController.h"
 #include "views/ViewController.h"
 #include "CollectionSystemManager.h"
@@ -45,7 +46,7 @@ void BasicGameListView::onFileChanged(FileData* file, FileChangeType change)
 void BasicGameListView::populateList(const std::vector<FileData*>& files)
 {
 	mList.clear();
-	mHeaderText.setText(mRoot->getSystem()->getFullName());
+	mHeaderText.setText(Utils::I18n::tr(mRoot->getSystem()->getFullName()));
 	if (files.size() > 0)
 	{
 		for(auto it = files.cbegin(); it != files.cend(); it++)
@@ -114,7 +115,8 @@ int BasicGameListView::getViewportTop()
 void BasicGameListView::addPlaceholder()
 {
 	// empty list - add a placeholder
-	FileData* placeholder = new FileData(PLACEHOLDER, "<No Entries Found>", this->mRoot->getSystem()->getSystemEnvData(), this->mRoot->getSystem());
+	// TRANSLATORS: the text is the placeholder's file name: no "/" and no "."
+	FileData* placeholder = new FileData(PLACEHOLDER, _("<No Entries Found>"), this->mRoot->getSystem()->getSystemEnvData(), this->mRoot->getSystem());
 	mList.add(placeholder->getName(), placeholder, (placeholder->getType() == PLACEHOLDER));
 }
 
@@ -214,17 +216,17 @@ std::vector<HelpPrompt> BasicGameListView::getHelpPrompts()
 	std::vector<HelpPrompt> prompts;
 
 	if(Settings::getInstance()->getBool("QuickSystemSelect"))
-		prompts.push_back(HelpPrompt("left/right", "system"));
-	prompts.push_back(HelpPrompt("up/down", "choose"));
-	prompts.push_back(HelpPrompt("a", "launch"));
-	prompts.push_back(HelpPrompt("b", "back"));
+		prompts.push_back(HelpPrompt("left/right", _("system")));
+	prompts.push_back(HelpPrompt("up/down", _("choose")));
+	prompts.push_back(HelpPrompt("a", _("launch")));
+	prompts.push_back(HelpPrompt("b", _("back")));
 	if(!UIModeController::getInstance()->isUIModeKid())
-		prompts.push_back(HelpPrompt("select", "options"));
+		prompts.push_back(HelpPrompt("select", _("options")));
 	if(mRoot->getSystem()->isGameSystem())
-		prompts.push_back(HelpPrompt("x", "random"));
+		prompts.push_back(HelpPrompt("x", _("random")));
 	if(mRoot->getSystem()->isGameSystem() && !UIModeController::getInstance()->isUIModeKid())
 	{
-		std::string prompt = CollectionSystemManager::get()->getEditingCollection();
+		std::string prompt = Utils::I18n::tr(CollectionSystemManager::get()->getEditingCollection());
 		prompts.push_back(HelpPrompt("y", prompt));
 	}
 	return prompts;

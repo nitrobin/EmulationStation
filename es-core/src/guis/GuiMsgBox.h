@@ -4,6 +4,7 @@
 
 #include "components/ComponentGrid.h"
 #include "components/NinePatchComponent.h"
+#include "utils/I18n.h"
 #include "GuiComponent.h"
 
 class ButtonComponent;
@@ -13,7 +14,7 @@ class GuiMsgBox : public GuiComponent
 {
 public:
 	GuiMsgBox(Window* window, const std::string& text,
-		const std::string& name1 = "OK", const std::function<void()>& func1 = nullptr,
+		const std::string& name1 = _("OK"), const std::function<void()>& func1 = nullptr,
 		const std::string& name2 = "", const std::function<void()>& func2 = nullptr,
 		const std::string& name3 = "", const std::function<void()>& func3 = nullptr);
 

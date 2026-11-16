@@ -11,6 +11,7 @@
 #include "views/gamelist/VideoGameListView.h"
 #include "views/SystemView.h"
 #include "views/UIModeController.h"
+#include "utils/I18n.h"
 #include "FileFilterIndex.h"
 #include "Log.h"
 #include "Scripting.h"
@@ -77,7 +78,7 @@ void ViewController::goToStart()
 
 void ViewController::ReloadAndGoToStart()
 {
-	mWindow->renderLoadingScreen("Loading...");
+	mWindow->renderLoadingScreen(_("Loading..."));
 	ViewController::get()->reloadAll();
 	ViewController::get()->goToStart();
 }
@@ -506,14 +507,14 @@ void ViewController::preload()
 
 	bool splash = Settings::getInstance()->getBool("SplashScreen");
 	if (splash)
-		mWindow->renderLoadingScreen("Preloading UI", (float)i / (float)max);
+		mWindow->renderLoadingScreen(_("Preloading UI"), (float)i / (float)max);
 
 	for(auto it = SystemData::sSystemVector.cbegin(); it != SystemData::sSystemVector.cend(); it++)
 	{
 		if (splash)
 		{
 			i++;
-			mWindow->renderLoadingScreen("Preloading UI", (float)i / (float)max);
+			mWindow->renderLoadingScreen(_("Preloading UI"), (float)i / (float)max);
 		}
 
 		(*it)->getIndex()->resetFilters();
@@ -613,7 +614,7 @@ std::vector<HelpPrompt> ViewController::getHelpPrompts()
 
 	prompts = mCurrentView->getHelpPrompts();
 	if(!(UIModeController::getInstance()->isUIModeKid() && Settings::getInstance()->getBool("DisableKidStartMenu")))
-		prompts.push_back(HelpPrompt("start", "menu"));
+		prompts.push_back(HelpPrompt("start", _("menu")));
 
 	return prompts;
 }

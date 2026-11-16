@@ -1,5 +1,6 @@
 #include "components/DateTimeComponent.h"
 
+#include "utils/I18n.h"
 #include "utils/StringUtil.h"
 #include "Log.h"
 #include "Settings.h"
@@ -56,7 +57,7 @@ std::string DateTimeComponent::getDisplayString() const
 	if (mDisplayRelative) {
 		//relative time
 		if(mTime.getTime() == Utils::Time::NOT_A_DATE_TIME)
-			return "never";
+			return _("never");
 
 		Utils::Time::DateTime now(Utils::Time::now());
 		Utils::Time::Duration dur(now.getTime() - mTime.getTime());
@@ -64,19 +65,19 @@ std::string DateTimeComponent::getDisplayString() const
 		char buf[64];
 
 		if(dur.getDays() > 0)
-			sprintf(buf, "%d day%s ago", dur.getDays(), (dur.getDays() > 1) ? "s" : "");
+			snprintf(buf, sizeof(buf), Utils::I18n::trn("%d day ago", "%d days ago", dur.getDays()), dur.getDays());
 		else if(dur.getHours() > 0)
-			sprintf(buf, "%d hour%s ago", dur.getHours(), (dur.getHours() > 1) ? "s" : "");
+			snprintf(buf, sizeof(buf), Utils::I18n::trn("%d hour ago", "%d hours ago", dur.getHours()), dur.getHours());
 		else if(dur.getMinutes() > 0)
-			sprintf(buf, "%d minute%s ago", dur.getMinutes(), (dur.getMinutes() > 1) ? "s" : "");
+			snprintf(buf, sizeof(buf), Utils::I18n::trn("%d minute ago", "%d minutes ago", dur.getMinutes()), dur.getMinutes());
 		else
-			sprintf(buf, "%d second%s ago", dur.getSeconds(), (dur.getSeconds() > 1) ? "s" : "");
+			snprintf(buf, sizeof(buf), Utils::I18n::trn("%d second ago", "%d seconds ago", dur.getSeconds()), dur.getSeconds());
 
 		return std::string(buf);
 	}
 
 	if(mTime.getTime() == Utils::Time::NOT_A_DATE_TIME)
-		return "unknown";
+		return _("unknown");
 
 	return Utils::Time::timeToString(mTime.getTime(), mFormat);
 }

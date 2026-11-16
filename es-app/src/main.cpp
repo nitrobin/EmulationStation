@@ -4,6 +4,7 @@
 #include "guis/GuiDetectDevice.h"
 #include "guis/GuiMsgBox.h"
 #include "utils/FileSystemUtil.h"
+#include "utils/I18n.h"
 #include "utils/ProfilingUtil.h"
 #include "views/ViewController.h"
 #include "CollectionSystemManager.h"
@@ -294,6 +295,7 @@ void onExit()
 int main(int argc, char* argv[])
 {
 	std::locale::global(std::locale("C"));
+	Utils::I18n::init();
 
 	if(!parseArgs(argc, argv))
 		return 0;

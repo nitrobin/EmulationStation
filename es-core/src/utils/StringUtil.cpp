@@ -165,7 +165,34 @@ namespace Utils
 			std::string string;
 
 			for(size_t i = 0; i < _string.length(); ++i)
-				string += (char)toupper(_string[i]);
+			{
+				const unsigned char c = (unsigned char)_string[i];
+				const unsigned char n = (i + 1 < _string.length()) ? (unsigned char)_string[i + 1] : 0;
+
+				// Cyrillic small letters (UTF-8, two bytes): U+0430..U+043F -> U+0410..U+041F,
+				// U+0440..U+044F -> U+0420..U+042F, U+0450..U+045F -> U+0400..U+040F
+				// (ё, ђ .. џ), U+0491 -> U+0490 (ґ)
+				if((c == 0xD0) && (n >= 0xB0) && (n <= 0xBF))
+				{
+					string += (char)0xD0; string += (char)(n - 0x20); ++i;
+				}
+				else if((c == 0xD1) && (n >= 0x80) && (n <= 0x8F))
+				{
+					string += (char)0xD0; string += (char)(n + 0x20); ++i;
+				}
+				else if((c == 0xD1) && (n >= 0x90) && (n <= 0x9F))
+				{
+					string += (char)0xD0; string += (char)(n - 0x10); ++i;
+				}
+				else if((c == 0xD2) && (n == 0x91))
+				{
+					string += (char)0xD2; string += (char)0x90; ++i;
+				}
+				else if(c < 0x80)
+					string += (char)toupper(c);
+				else
+					string += (char)c;
+			}
 
 			return string;
 

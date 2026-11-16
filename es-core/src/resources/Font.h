@@ -18,8 +18,11 @@ class TextCache;
 #define FONT_SIZE_MEDIUM ((unsigned int)(0.045f * Math::min((int)Renderer::getScreenHeight(), (int)Renderer::getScreenWidth())))
 #define FONT_SIZE_LARGE ((unsigned int)(0.085f * Math::min((int)Renderer::getScreenHeight(), (int)Renderer::getScreenWidth())))
 
-#define FONT_PATH_LIGHT ":/opensans_hebrew_condensed_light.ttf"
-#define FONT_PATH_REGULAR ":/opensans_hebrew_condensed_regular.ttf"
+// the user interface font: Roboto Condensed of the system (Debian fonts-roboto-unhinted: Latin,
+// Cyrillic, Greek) when it is installed, otherwise the Open Sans Hebrew Condensed of resources/
+// (no Cyrillic letters)
+#define FONT_PATH_LIGHT Font::getLightPath()
+#define FONT_PATH_REGULAR Font::getDefaultPath()
 
 enum Alignment
 {
@@ -60,7 +63,8 @@ public:
 	int getSize() const;
 	inline const std::string& getPath() const { return mPath; }
 
-	inline static const char* getDefaultPath() { return FONT_PATH_REGULAR; }
+	static const std::string& getDefaultPath();
+	static const std::string& getLightPath();
 
 	static std::shared_ptr<Font> getFromTheme(const ThemeData::ThemeElement* elem, unsigned int properties, const std::shared_ptr<Font>& orig);
 

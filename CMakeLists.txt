@@ -281,6 +281,29 @@ set(LIBRARY_OUTPUT_PATH ${dir} CACHE PATH "Build directory" FORCE)
 #-------------------------------------------------------------------------------
 # add each component
 
+#-------------------------------------------------------------------------------
+# translations: GNU gettext catalogues locale/<lang>.po, compiled with msgfmt and installed as
+# LOCALEDIR/<lang>/LC_MESSAGES/emulationstation.mo (es-core/src/utils/I18n.h)
+set(LOCALEDIR "${CMAKE_INSTALL_PREFIX}/share/locale" CACHE PATH "Where the translation catalogues are installed")
+add_definitions(-DES_LOCALEDIR="${LOCALEDIR}")
+find_package(Gettext)
+if(GETTEXT_FOUND)
+    file(GLOB ES_PO_FILES ${CMAKE_CURRENT_SOURCE_DIR}/locale/*.po)
+    foreach(po ${ES_PO_FILES})
+        get_filename_component(lang ${po} NAME_WE)
+        set(mo ${CMAKE_CURRENT_BINARY_DIR}/locale/${lang}/emulationstation.mo)
+        add_custom_command(OUTPUT ${mo}
+            COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/locale/${lang}
+            COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} --check -o ${mo} ${po}
+            DEPENDS ${po})
+        list(APPEND ES_MO_FILES ${mo})
+        install(FILES ${mo} DESTINATION ${LOCALEDIR}/${lang}/LC_MESSAGES)
+    endforeach()
+    add_custom_target(translations ALL DEPENDS ${ES_MO_FILES})
+else()
+    message(STATUS "msgfmt not found: no translations")
+endif()
+
 add_subdirectory("external")
 add_subdirectory("es-core")
 add_subdirectory("es-app")

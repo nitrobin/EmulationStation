@@ -233,6 +233,25 @@ void Font::getTextureForNewGlyph(const Vector2i& glyphSize, FontTexture*& tex_ou
 	}
 }
 
+static std::string firstFont(const char* _system, const char* _resource)
+{
+	return Utils::FileSystem::exists(_system) ? std::string(_system) : std::string(_resource);
+}
+
+const std::string& Font::getDefaultPath()
+{
+	static const std::string path = firstFont("/usr/share/fonts/truetype/roboto/unhinted/RobotoCondensed-Regular.ttf",
+		":/opensans_hebrew_condensed_regular.ttf");
+	return path;
+}
+
+const std::string& Font::getLightPath()
+{
+	static const std::string path = firstFont("/usr/share/fonts/truetype/roboto/unhinted/RobotoCondensed-Light.ttf",
+		":/opensans_hebrew_condensed_light.ttf");
+	return path;
+}
+
 std::vector<std::string> getFallbackFontPaths()
 {
 #ifdef WIN32

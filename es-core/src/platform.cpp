@@ -14,7 +14,9 @@ int runShutdownCommand()
 {
 #ifdef WIN32 // windows
 	return system("shutdown -s -t 0");
-#else // osx / linux
+#elif defined(__linux__) // systemd: polkit lets the active local user power off, no sudo or password
+	return system("systemctl --no-ask-password poweroff");
+#else // osx
 	return system("sudo shutdown -h now");
 #endif
 }
@@ -23,7 +25,9 @@ int runRestartCommand()
 {
 #ifdef WIN32 // windows
 	return system("shutdown -r -t 0");
-#else // osx / linux
+#elif defined(__linux__) // systemd: polkit lets the active local user reboot, no sudo or password
+	return system("systemctl --no-ask-password reboot");
+#else // osx
 	return system("sudo shutdown -r now");
 #endif
 }

@@ -415,7 +415,11 @@ int main(int argc, char* argv[])
 	//choose which GUI to open depending on if an input configuration already exists
 	if(errorMsg == NULL)
 	{
-		if(Utils::FileSystem::exists(InputManager::getConfigPath()) && InputManager::getInstance()->getNumConfiguredDevices() > 0)
+		// the keyboard works without a configuration, a gamepad SDL knows too (InputManager): the
+		// configuration screen comes first only for a connected joystick that neither es_input.cfg nor
+		// SDL configures, or when nothing at all is configured
+		InputManager* im = InputManager::getInstance();
+		if(im->getNumConfiguredDevices() > 0 && (Utils::FileSystem::exists(InputManager::getConfigPath()) || !im->hasUnconfiguredJoystick()))
 		{
 			ViewController::get()->goToStart();
 		}else{

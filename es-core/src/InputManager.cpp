@@ -1,6 +1,7 @@
 #include "InputManager.h"
 
 #include "utils/FileSystemUtil.h"
+#include "utils/StringUtil.h"
 #include "CECInput.h"
 #include "Log.h"
 #include "platform.h"
@@ -10,6 +11,8 @@
 #include <SDL.h>
 #include <iostream>
 #include <assert.h>
+#include <cctype>
+#include <cstdlib>
 
 #define KEYBOARD_GUID_STRING "-1"
 #define CEC_GUID_STRING      "-2"
@@ -73,7 +76,10 @@ void InputManager::init()
 	}
 
 	mKeyboardInputConfig = new InputConfig(DEVICE_KEYBOARD, "Keyboard", KEYBOARD_GUID_STRING);
-	loadInputConfig(mKeyboardInputConfig);
+	// without a saved keyboard configuration the keyboard works with the defaults
+	// (loadDefaultKBConfig: arrows, Enter, Escape, F1, F2, [ ]) instead of not at all
+	if(!loadInputConfig(mKeyboardInputConfig))
+		loadDefaultKBConfig();
 
 	SDL_USER_CECBUTTONDOWN = SDL_RegisterEvents(2);
 	SDL_USER_CECBUTTONUP   = SDL_USER_CECBUTTONDOWN + 1;
@@ -107,7 +113,10 @@ void InputManager::addJoystickByDeviceIndex(int id)
 
 	if(!loadInputConfig(mInputConfigs[joyId]))
 	{
-		LOG(LogInfo) << "Added unconfigured joystick '" << SDL_JoystickName(joy) << "' (GUID: " << guid << ", instance ID: " << joyId << ", device index: " << id << ").";
+		if(loadGameControllerMapping(id, mInputConfigs[joyId]))
+			LOG(LogInfo) << "Added joystick '" << SDL_JoystickName(joy) << "' configured from its SDL game controller mapping (GUID: " << guid << ", instance ID: " << joyId << ", device index: " << id << ").";
+		else
+			LOG(LogInfo) << "Added unconfigured joystick '" << SDL_JoystickName(joy) << "' (GUID: " << guid << ", instance ID: " << joyId << ", device index: " << id << ").";
 	}else{
 		LOG(LogInfo) << "Added known joystick '" << SDL_JoystickName(joy) << "' (instance ID: " << joyId << ", device index: " << id << ")";
 	}
@@ -320,6 +329,84 @@ bool InputManager::loadInputConfig(InputConfig* config)
 	return true;
 }
 
+// A joystick without a saved configuration that SDL knows as a game controller (SDL's mapping
+// database, or the mapping SDL makes itself for a Linux evdev gamepad) gets its inputs from that
+// mapping, so it works without the configuration screen. Positions as on Xbox / PlayStation pads:
+// accept ("a") is the bottom face button (SDL "a"), back ("b") the right one (SDL "b"), "x" the top
+// one (SDL "y"), "y" the left one (SDL "x"). Kept in memory only: configuring the device in the menu
+// writes es_input.cfg, which wins from then on. False (config left empty) without a mapping or
+// without an accept button in it.
+bool InputManager::loadGameControllerMapping(int deviceIndex, InputConfig* config)
+{
+	char* mapping = SDL_GameControllerMappingForDeviceIndex(deviceIndex);
+	if(mapping == NULL)
+		return false;
+	const std::string text = mapping;
+	SDL_free(mapping);
+
+	// SDL element -> ES input: a button, a hat direction or a half axis
+	static const std::map<std::string, std::string> buttons = {
+		{ "a", "a" }, { "b", "b" }, { "y", "x" }, { "x", "y" }, { "start", "start" }, { "back", "select" },
+		{ "leftshoulder", "leftshoulder" }, { "rightshoulder", "rightshoulder" },
+		{ "lefttrigger", "lefttrigger" }, { "righttrigger", "righttrigger" },
+		{ "leftstick", "leftthumb" }, { "rightstick", "rightthumb" },
+		{ "dpup", "up" }, { "dpdown", "down" }, { "dpleft", "left" }, { "dpright", "right" } };
+	// SDL stick axis -> ES inputs of its negative and its positive direction
+	static const std::map<std::string, std::pair<std::string, std::string>> sticks = {
+		{ "leftx", { "leftanalogleft", "leftanalogright" } }, { "lefty", { "leftanalogup", "leftanalogdown" } },
+		{ "rightx", { "rightanalogleft", "rightanalogright" } }, { "righty", { "rightanalogup", "rightanalogdown" } } };
+
+	const int device = config->getDeviceId();
+	config->clear();
+	// "GUID,name,element:source,...": skip the GUID and the name
+	const std::vector<std::string> fields = Utils::String::delimitedStringToVector(text, ",");
+	for(size_t i = 2; i < fields.size(); i++)
+	{
+		const size_t colon = fields[i].find(':');
+		if(colon == std::string::npos || colon == 0)
+			continue;
+		const std::string element = fields[i].substr(0, colon);
+		std::string source = fields[i].substr(colon + 1);
+		int half = 0; // source "+a2" / "-a2": that half of the axis
+		if(!source.empty() && (source[0] == '+' || source[0] == '-'))
+		{
+			half = source[0] == '+' ? 1 : -1;
+			source = source.substr(1);
+		}
+		const bool inverted = !source.empty() && source.back() == '~';
+		if(inverted)
+			source.pop_back();
+		if(source.size() < 2 || !isdigit((unsigned char)source[1]))
+			continue;
+		const int index = atoi(source.c_str() + 1);
+
+		const auto button = buttons.find(element);
+		const auto stick = sticks.find(element);
+		if(button != buttons.cend())
+		{
+			if(source[0] == 'b')
+				config->mapInput(button->second, Input(device, TYPE_BUTTON, index, 1, true));
+			else if(source[0] == 'h' && source.find('.') != std::string::npos)
+				config->mapInput(button->second, Input(device, TYPE_HAT, index, atoi(source.c_str() + source.find('.') + 1), true));
+			else if(source[0] == 'a') // a trigger, or a d-pad on an axis: pressed = the positive half unless told
+				config->mapInput(button->second, Input(device, TYPE_AXIS, index, (half ? half : 1) * (inverted ? -1 : 1), true));
+		}
+		else if(stick != sticks.cend() && source[0] == 'a' && half == 0)
+		{
+			config->mapInput(stick->second.first, Input(device, TYPE_AXIS, index, inverted ? 1 : -1, true));
+			config->mapInput(stick->second.second, Input(device, TYPE_AXIS, index, inverted ? -1 : 1, true));
+		}
+	}
+
+	Input accept;
+	if(!config->getInputByName("a", &accept))
+	{
+		config->clear();
+		return false;
+	}
+	return true;
+}
+
 //used in an "emergency" where no keyboard config could be loaded from the inputmanager config file
 //allows the user to select to reconfigure in menus if this happens without having to delete es_input.cfg manually
 void InputManager::loadDefaultKBConfig()
@@ -483,6 +570,16 @@ int InputManager::getNumConfiguredDevices()
 		num++;
 
 	return num;
+}
+
+bool InputManager::hasUnconfiguredJoystick()
+{
+	for(auto it = mInputConfigs.cbegin(); it != mInputConfigs.cend(); it++)
+	{
+		if(!it->second->isConfigured())
+			return true;
+	}
+	return false;
 }
 
 std::string InputManager::getDeviceGUIDString(int deviceId)

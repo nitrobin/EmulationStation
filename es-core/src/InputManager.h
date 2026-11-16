@@ -34,6 +34,7 @@ private:
 	void addJoystickByDeviceIndex(int id);
 	void removeJoystickByJoystickID(SDL_JoystickID id);
 	bool loadInputConfig(InputConfig* config); // returns true if successfully loaded, false if not (or didn't exist)
+	bool loadGameControllerMapping(int deviceIndex, InputConfig* config); // from SDL's game controller mapping
 
 public:
 	virtual ~InputManager();
@@ -52,6 +53,7 @@ public:
 	int getAxisCountByDevice(int deviceId);
 	int getButtonCountByDevice(int deviceId);
 	int getNumConfiguredDevices();
+	bool hasUnconfiguredJoystick(); // a connected joystick without a configuration
 
 	std::string getDeviceGUIDString(int deviceId);
 

@@ -101,8 +101,9 @@ void GuiDetectDevice::update(int deltaTime)
 {
 	if(mHoldingConfig)
 	{
-		// If ES starts and if a known device is connected after startup skip controller configuration
-		if(mFirstRun && Utils::FileSystem::exists(InputManager::getConfigPath()) && InputManager::getInstance()->getNumConfiguredDevices() > 0)
+		// If ES starts and if a known device is connected after startup skip controller configuration;
+		// so does holding a device that already works (the default keyboard, a gamepad SDL knows)
+		if(mFirstRun && (mHoldingConfig->isConfigured() || (Utils::FileSystem::exists(InputManager::getConfigPath()) && InputManager::getInstance()->getNumConfiguredDevices() > 0)))
 		{
 			if(mDoneCallback)
 				mDoneCallback();

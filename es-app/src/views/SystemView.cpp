@@ -185,10 +185,10 @@ bool SystemView::input(InputConfig* config, Input input)
 			ViewController::get()->goToGameList(getSelected());
 			return true;
 		}
-		if (config->isMappedTo("x", input))
+		if (config->isMappedTo("x", input) && getSelected()->isGameSystem())
 		{
 			// get random system
-			// go to system
+			// go to system (not from a system without games: no "random" there, as in its game list)
 			setCursor(SystemData::getRandomSystem());
 			return true;
 		}
@@ -383,7 +383,8 @@ std::vector<HelpPrompt> SystemView::getHelpPrompts()
 	else
 		prompts.push_back(HelpPrompt("left/right", _("choose")));
 	prompts.push_back(HelpPrompt("a", _("select")));
-	prompts.push_back(HelpPrompt("x", _("random")));
+	if (size() > 0 && getSelected()->isGameSystem())
+		prompts.push_back(HelpPrompt("x", _("random")));
 
 	if (!UIModeController::getInstance()->isUIModeKid() && Settings::getInstance()->getBool("ScreenSaverControls"))
 		prompts.push_back(HelpPrompt("select", _("launch screensaver")));

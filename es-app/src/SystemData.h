@@ -22,6 +22,8 @@ struct SystemEnvironmentData
 	std::vector<std::string> mSearchExtensions;
 	std::string mLaunchCommand;
 	std::vector<PlatformIds::PlatformId> mPlatformIds;
+	bool mNonGame = false; // <nongame> in es_systems.cfg: not a game system
+	std::string mNonGameInfo; // its text: shown in the carousel instead of the game count
 };
 
 class SystemData
@@ -62,6 +64,8 @@ public:
 	inline std::vector<SystemData*>::const_reverse_iterator getRevIterator() const { return std::find(sSystemVector.crbegin(), sSystemVector.crend(), this); };
 	inline bool isCollection() { return mIsCollectionSystem; };
 	inline bool isGameSystem() { return mIsGameSystem; };
+	// the text a non-game system shows instead of the game count ("" for "retropie")
+	inline const std::string& getNonGameInfo() const { static const std::string none; return mEnvData ? mEnvData->mNonGameInfo : none; };
 
 	bool isVisible();
 

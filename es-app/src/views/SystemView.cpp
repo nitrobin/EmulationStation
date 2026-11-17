@@ -260,7 +260,7 @@ void SystemView::onCursorChanged(const CursorState& /*state*/)
 		std::stringstream ss;
 
 		if (!getSelected()->isGameSystem())
-			ss << _("CONFIGURATION");
+			ss << (getSelected()->getNonGameInfo().empty() ? _("CONFIGURATION") : Utils::String::toUpper(getSelected()->getNonGameInfo()));
 		else
 			ss << Utils::String::format(Utils::I18n::trn("%i GAME AVAILABLE", "%i GAMES AVAILABLE", gameCount), (int)gameCount);
 

@@ -65,10 +65,9 @@ SystemData::~SystemData()
 
 void SystemData::setIsGameSystemStatus()
 {
-	// we exclude non-game systems from specific operations (i.e. the "RetroPie" system, at least)
-	// if/when there are more in the future, maybe this can be a more complex method, with a proper list
-	// but for now a simple string comparison is more performant
-	mIsGameSystem = (mName != "retropie");
+	// we exclude non-game systems from specific operations: the "RetroPie" system and
+	// every system with <nongame> in es_systems.cfg
+	mIsGameSystem = (mName != "retropie") && !(mEnvData && mEnvData->mNonGame);
 }
 
 void SystemData::populateFolder(FileData* folder)
@@ -247,6 +246,12 @@ SystemData* SystemData::loadSystem(pugi::xml_node system)
 	envData->mSearchExtensions = extensions;
 	envData->mLaunchCommand = cmd;
 	envData->mPlatformIds = platformIds;
+	pugi::xml_node nonGame = system.child("nongame");
+	if (nonGame)
+	{
+		envData->mNonGame = true;
+		envData->mNonGameInfo = nonGame.text().get();
+	}
 
 	SystemData* newSys = new SystemData(name, fullname, envData, themeFolder);
 	if (newSys->getRootFolder()->getChildren().size() == 0)

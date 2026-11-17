@@ -260,6 +260,12 @@ All systems must be contained within the <systemList> tag.-->
 		<!-- The theme to load from the current theme set. See THEMES.md for more information.
 		This tag is optional; if not set, it will use the value of <name>. -->
 		<theme>snes</theme>
+
+		<!-- Optional: this system holds no games (apps, media, settings), as the "retropie" system.
+		It is left out of collections, random games and the system screensaver, its list has no
+		random game or favorites buttons, and the carousel shows this text instead of the game count
+		(empty: "CONFIGURATION"). Not used in this example.
+		<nongame>Radio, music, weather</nongame> -->
 	</system>
 </systemList>
 ```

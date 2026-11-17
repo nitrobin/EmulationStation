@@ -81,10 +81,10 @@ GuiGamelistOptions::GuiGamelistOptions(Window* window, SystemData* system) : Gui
 		// add launch system screensaver
 		std::string screensaver_behavior = Settings::getInstance()->getString("ScreenSaverBehavior");
 		bool useGamelistMedia = screensaver_behavior == "random video" || (screensaver_behavior == "slideshow" && !Settings::getInstance()->getBool("SlideshowScreenSaverCustomMediaSource"));
-		bool rpConfigSelected = "retropie" == mSystem->getName();
+		bool nonGameSelected = !mSystem->isGameSystem();
 		bool collectionsSelected = mSystem->getName() == CollectionSystemManager::get()->getCustomCollectionsBundle()->getName();
 
-		if (!rpConfigSelected && useGamelistMedia && (!collectionsSelected || collectionsSelected && file->getType() == GAME)) {
+		if (!nonGameSelected && useGamelistMedia && (!collectionsSelected || collectionsSelected && file->getType() == GAME)) {
 			row.elements.clear();
 			row.addElement(std::make_shared<TextComponent>(mWindow, _("LAUNCH SYSTEM SCREENSAVER"), Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
 			row.makeAcceptInputHandler(std::bind(&GuiGamelistOptions::launchSystemScreenSaver, this));
